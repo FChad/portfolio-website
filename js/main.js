@@ -44,6 +44,11 @@ document.getElementById("age").innerText = age;
 
 
 //Website dark/Light theme
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // dark mode
+}
+
 const themeBtn = document.querySelector(".theme-btn");
 
 themeBtn.addEventListener("click", () => {
@@ -64,6 +69,12 @@ const savedIcon = localStorage.getItem("saved-icon");
 if (savedTheme) {
     document.body.classList[savedTheme === "dark" ? "add" : "remove"]("dark-theme");
     themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("sun");
+} else {
+    // Browser Dark-Mode detection
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add("dark-theme");
+        themeBtn.classList.add("sun");
+    }
 }
 
 
