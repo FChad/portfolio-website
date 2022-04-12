@@ -30,6 +30,17 @@ modalCloseBtns.forEach((modalCloseBtn) => {
 });
 
 
+//Calculate age
+var age = calculate_age(new Date(1999, 8, 3))
+
+function calculate_age(birthday) { 
+    var diff_ms = Date.now() - birthday.getTime();
+    var age_dt = new Date(diff_ms); 
+  
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
+document.getElementById("age").innerText = age;
 
 
 //Website dark/Light theme
