@@ -132,7 +132,6 @@ li {
 
 ::-webkit-scrollbar-thumb {
     background: var(--scroll-thumb-color);
-    border-radius: 2em;
 }
 
 ::-webkit-scrollbar-thumb:hover {
