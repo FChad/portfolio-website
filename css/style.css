@@ -704,6 +704,10 @@ header.sticky .nav-bar {
     margin-bottom: 20px;
 }
 
+.project-card:hover{
+    transform: scale(1.03);
+}
+
 .project-content {
     gap: 20px;
 }
@@ -723,7 +727,6 @@ header.sticky .nav-bar {
     max-width: 300px;
     border-radius: 6px;
 }
-
 
 
 /*===Contact section=== ====*/
