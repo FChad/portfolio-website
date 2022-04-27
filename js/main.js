@@ -6,24 +6,24 @@ window.addEventListener("scroll", function () {
 });
 
 
-//Services section Modal
-const serviceModals = document.querySelectorAll(".experience-modal");
-const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
-const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+//Experience section Modal
+const experienceModals = document.querySelectorAll(".experience-modal");
+const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
+const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
 
 var modal = function (modalClick) {
-    serviceModals[modalClick].classList.add("active");
+    experienceModals[modalClick].classList.add("active");
 }
 
-learnmoreBtns.forEach((learnmoreBtn, i) => {
+experienceLearnMoreBtns.forEach((learnmoreBtn, i) => {
     learnmoreBtn.addEventListener("click", () => {
         modal(i);
     });
 });
 
-modalCloseBtns.forEach((modalCloseBtn) => {
+experienceModalCloseBtns.forEach((modalCloseBtn) => {
     modalCloseBtn.addEventListener("click", () => {
-        serviceModals.forEach((modalView) => {
+        experienceModals.forEach((modalView) => {
             modalView.classList.remove("active");
         });
     });
@@ -126,4 +126,18 @@ navItems.forEach((navItem) => {
     navItem.addEventListener("click", () => {
         navigation.classList.remove("active");
     });
+});
+
+
+// Close all modals with "Escape"
+window.addEventListener("keydown", function (event) {
+    if (event.key === 'Escape') {
+        // Close navigation modals
+        navigation.classList.remove("active");
+
+        // Close experience modals
+        experienceModals.forEach((modalView) => {
+            modalView.classList.remove("active");
+        });
+    }
 });

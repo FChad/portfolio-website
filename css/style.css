@@ -608,14 +608,14 @@ header.sticky .nav-bar {
 }
 
 
-.experience-card .learn-more-btn {
+.experience-card .experience-learn-more-btn {
     color: var(--third-color);
     padding-top: 0.4em;
     cursor: pointer;
     transition: .3s ease;
 }
 
-.experience-card .learn-more-btn i {
+.experience-card .experience-learn-more-btn i {
     transition: .3s ease;
 }
 
@@ -626,7 +626,7 @@ header.sticky .nav-bar {
     font-weight: 700;
 }
 
-.experience-card:hover .learn-more-btn i {
+.experience-card:hover .experience-learn-more-btn i {
     transform: translateX(10px);
 }
 
@@ -665,7 +665,7 @@ header.sticky .nav-bar {
     transform: translateY(0);
 }
 
-.experience-modal-body .modal-close-btn {
+.experience-modal-body .experience-modal-close-btn {
     position: absolute;
     top: 0;
     right: 0;
@@ -702,11 +702,11 @@ header.sticky .nav-bar {
     transition: .3s ease;
 }
 
-.project-card:not(:last-child){
+.project-card:not(:last-child) {
     margin-bottom: 20px;
 }
 
-.project-card:hover{
+.project-card:hover {
     transform: scale(1.03);
 }
 
@@ -725,7 +725,7 @@ header.sticky .nav-bar {
     margin: 8px 0 14px;
 }
 
-.project-cover img{
+.project-cover img {
     max-width: 300px;
     border-radius: 6px;
 }
@@ -843,7 +843,8 @@ header.sticky .nav-bar {
     color: var(--second-color);
 }
 
-.contact-left p, .contact-right p {
+.contact-left p,
+.contact-right p {
     color: var(--third-color);
     font-size: 1.4em;
     margin-bottom: 30px;
