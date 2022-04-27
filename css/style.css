@@ -306,7 +306,7 @@ header.sticky .nav-bar {
     }
 }
 
-
+/* About */
 
 .flex-center {
     display: flex;
@@ -428,6 +428,8 @@ header.sticky .nav-bar {
     color: var(--third-color);
     font-size: var(--small-font-size);
 }
+
+/* Skills */
 
 
 .skills .container .content {
@@ -726,6 +728,75 @@ header.sticky .nav-bar {
 .project-cover img{
     max-width: 300px;
     border-radius: 6px;
+}
+
+
+
+/*====== Hobby section =======*/
+
+.hobbies .container .content {
+    width: 100%;
+}
+
+.hobby-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 100%;
+    gap: 35px;
+    margin: 0 auto;
+}
+
+.hobby-list .img-card {
+    position: relative;
+    max-width: 100%;
+    height: 360px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hobby-list .img-card .overlay {
+    transition: 1s ease;
+}
+
+.hobby-list .img-card:hover .overlay {
+    z-index: 777;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hobby-list .img-card .info {
+    z-index: 777;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    color: #fff;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.hobby-list .img-card:hover .info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hobby-list .img-card .info h3 {
+    font-size: 1.5em;
+}
+
+.hobby-list .img-card .info span {
+    font-size: 1.2em;
+}
+
+.hobby-list .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
