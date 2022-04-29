@@ -706,10 +706,6 @@ header.sticky .nav-bar {
     margin-bottom: 20px;
 }
 
-.project-card:hover {
-    transform: scale(1.03);
-}
-
 .project-content {
     gap: 20px;
 }
@@ -728,8 +724,43 @@ header.sticky .nav-bar {
 .project-cover img {
     max-width: 300px;
     border-radius: 6px;
+    object-fit: cover;
+    box-shadow: var(--box-shadow);
+    transition: .3s ease;
 }
 
+.project-btns {
+    gap: 10px;
+}
+
+.project-btns label {
+    background: var(--second-color);
+    color: #fff;
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.project-btns label:hover,
+.project-btns label.active {
+    background: var(--hover-color);
+    transform: scale(1.03);
+}
+
+.project-text {
+    padding: 10px;
+    min-height: 230px;
+}
+
+.project-text .show {
+    display: inline-block;
+}
+
+.project-text div:not(.show){
+    display: none;
+}
 
 
 /*====== Hobby section =======*/

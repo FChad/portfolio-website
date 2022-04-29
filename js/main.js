@@ -43,6 +43,55 @@ function calculate_age(birthday) {
 document.getElementById("age").innerText = age;
 
 
+// Project Content Switch
+const projectDescriptionBtns = document.querySelectorAll(".project-description-btn");
+const projectImplementationBtns = document.querySelectorAll(".project-implementation-btn");
+const projectSoftwareBtns = document.querySelectorAll(".project-software-btn");
+
+const projectDescription = document.querySelectorAll(".project-description");
+const projectImplementation = document.querySelectorAll(".project-implementation");
+const projectSoftware = document.querySelectorAll(".project-software");
+
+projectDescriptionBtns.forEach((projectDescriptionBtn, i) => {
+    projectDescriptionBtn.addEventListener("click", () => {
+        projectDescriptionBtn.classList.add("active");
+        projectDescription[i].classList.add("show");
+
+        projectImplementation[i].classList.remove("show");
+        projectSoftware[i].classList.remove("show");
+
+        projectImplementationBtns[i].classList.remove("active");
+        projectSoftwareBtns[i].classList.remove("active");
+    });
+});
+
+projectImplementationBtns.forEach((projectImplementationBtn, i) => {
+    projectImplementationBtn.addEventListener("click", () => {
+        projectImplementationBtn.classList.add("active");
+        projectImplementation[i].classList.add("show");
+
+        projectDescription[i].classList.remove("show");
+        projectSoftware[i].classList.remove("show");
+
+        projectDescriptionBtns[i].classList.remove("active");
+        projectSoftwareBtns[i].classList.remove("active");
+    });
+});
+
+projectSoftwareBtns.forEach((projectSoftwareBtn, i) => {
+    projectSoftwareBtn.addEventListener("click", () => {
+        projectSoftwareBtn.classList.add("active");
+        projectSoftware[i].classList.add("show");
+
+        projectDescription[i].classList.remove("show");
+        projectImplementation[i].classList.remove("show");
+
+        projectDescriptionBtns[i].classList.remove("active");
+        projectImplementationBtns[i].classList.remove("active");
+    });
+});
+
+
 //Website dark/Light theme
 const themeBtn = document.querySelector(".theme-btn");
 
