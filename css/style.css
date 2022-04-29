@@ -1053,6 +1053,10 @@ footer a i {
         flex-direction: column;
     }
 
+    .project-btns {
+        flex-direction: column;
+    }
+
 
     /*======Contact section=======*/
     .contact .content {
