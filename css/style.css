@@ -721,8 +721,12 @@ header.sticky .nav-bar {
     margin: 8px 0 14px;
 }
 
+.project-cover {
+    min-width: 250px;
+}
+
 .project-cover img {
-    max-width: 300px;
+    width: 100%;
     border-radius: 6px;
     object-fit: cover;
     box-shadow: var(--box-shadow);
