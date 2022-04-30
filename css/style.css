@@ -707,6 +707,7 @@ header.sticky .nav-bar {
 }
 
 .project-content {
+    display: flex;
     gap: 20px;
 }
 
