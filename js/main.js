@@ -31,16 +31,9 @@ experienceModalCloseBtns.forEach((modalCloseBtn) => {
 
 
 //Calculate age
-var age = calculate_age(new Date(1999, 8, 3))
+const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10);
 
-function calculate_age(birthday) {
-    var diff_ms = Date.now() - birthday.getTime();
-    var age_dt = new Date(diff_ms);
-
-    return Math.abs(age_dt.getUTCFullYear() - 1970);
-}
-
-document.getElementById("age").innerText = age;
+document.getElementById("age").innerText = getAge('1999-08-03');
 
 
 // Project Content Switch
