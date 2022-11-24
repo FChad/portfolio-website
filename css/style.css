@@ -652,7 +652,7 @@ header.sticky .nav-bar {
 .experience-modal-body {
     position: relative;
     background: var(--modal-bg-color);
-    max-width: 600px;
+    max-width: 720px;
     margin: 20px;
     padding: 40px;
     border-radius: 10px;
@@ -669,8 +669,10 @@ header.sticky .nav-bar {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 20px;
+    margin: 15px;
     cursor: pointer;
+    font-size: 1.5em;
+    color: var(--second-color);
 }
 
 .experience-modal-body h3 {
