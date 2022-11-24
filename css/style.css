@@ -672,10 +672,9 @@ header.sticky .nav-bar {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 15px;
+    margin: 10px;
     cursor: pointer;
     font-size: 1.5em;
-    color: var(--second-color);
 }
 
 .experience-modal-body h3 {
@@ -961,9 +960,10 @@ footer a i {
         position: absolute;
         top: 0;
         right: 0;
-        margin: 20px;
+        margin: 10px;
         cursor: pointer;
         visibility: visible;
+        font-size: 1.5em;
     }
 
     .nav-menu-btn {
