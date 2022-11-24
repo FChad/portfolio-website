@@ -337,6 +337,7 @@ header.sticky .nav-bar {
     margin-bottom: 2rem;
     background: linear-gradient(to top, transparent 0%, var(--first-color) 70%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: .1;
 }
@@ -653,12 +654,14 @@ header.sticky .nav-bar {
     position: relative;
     background: var(--modal-bg-color);
     max-width: 720px;
+    max-height: 100vh;
     margin: 20px;
     padding: 40px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     transform: translateY(-50px);
     transition: .5s ease;
+    overflow-y: auto;
 }
 
 .experience-modal.active .experience-modal-body {
