@@ -977,6 +977,7 @@ footer a i {
         cursor: pointer;
         visibility: visible;
         font-size: 1.5em;
+        color: var(--modal-close-btn-color);
     }
 
     .nav-menu-btn {
