@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
     --first-color: #0e2431;
@@ -10,6 +10,7 @@
     --body-bg-color: #fefefe;
     --card-bg-color: #fff;
     --modal-bg-color: #fff;
+    --modal-close-btn-color: #cd5c5c;
     --bg-transparent-color: rgba(0, 0, 0, 0.1);
     --transparent-color-01: rgba(0, 0, 0, 0.1);
     --transparent-color-02: rgba(106, 89, 209, 0.1);
@@ -19,8 +20,8 @@
 
     --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
 
-    --small-font-size: 0.9em;
-    --normal-font-size: 1em;
+    --small-font-size: 1em;
+    --normal-font-size: 1.1em;
 
     --scroll-bar-color: #c5cadf;
     --scroll-thumb-color: #70768a;
@@ -54,7 +55,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Source Sans 3", sans-serif;
 }
 
 html {
@@ -225,6 +226,13 @@ header.sticky .nav-bar {
     width: 100%;
 }
 
+.home .home-container img {
+    max-width: 100%;
+    min-width: 400px;
+    max-height: 800px;
+    border-radius: 10px;
+}
+
 .home-container .media-icons {
     display: flex;
     flex-direction: column;
@@ -257,7 +265,7 @@ header.sticky .nav-bar {
 .home-container .info p {
     color: var(--third-color);
     font-size: var(--normal-font-size);
-    max-width: 350px;
+    max-width: 450px;
 }
 
 .btn {
@@ -482,6 +490,7 @@ header.sticky .nav-bar {
     margin-top: 15px;
     border-radius: 6px;
     transition: .3s ease;
+    position: relative;
 }
 
 .edu-list .item .year {
@@ -498,6 +507,14 @@ header.sticky .nav-bar {
     color: var(--first-color);
     font-size: var(--normal-font-size);
     font-weight: 500;
+}
+
+.edu-list .item > a > i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
 }
 
 .bar {
@@ -677,6 +694,7 @@ header.sticky .nav-bar {
     margin: 10px;
     cursor: pointer;
     font-size: 1.5em;
+    color: var(--modal-close-btn-color);
 }
 
 .experience-modal-body h3 {
