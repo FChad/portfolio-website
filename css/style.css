@@ -226,13 +226,6 @@ header.sticky .nav-bar {
     width: 100%;
 }
 
-.home .home-container img {
-    max-width: 100%;
-    min-width: 400px;
-    max-height: 800px;
-    border-radius: 10px;
-}
-
 .home-container .media-icons {
     display: flex;
     flex-direction: column;
