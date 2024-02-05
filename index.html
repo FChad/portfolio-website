@@ -3,160 +3,900 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <meta name="keywords"
+        content="Feierstein, Chad, BTS, Cloud, Computing, Cloud Computing, Luxemburg, Student, BTS, IT Technician, Web Programming, Portfolio, Cloud Engineer, Brevet de technicien supérieur">
+    <meta name="description"
+        content="Welcome to my portfolio website. This website serves to share my professional activities with others.">
+    <meta name="author" content="Chad Feierstein">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-    <title>Wartungsarbeiten</title>
-    <style>
-        body {
-            font-family: 'Noto Sans', sans-serif;
-            color: #616161
-                /*#757575*/
-            ;
-            background-color: #eeeeee;
-        }
 
-        .container {
-            margin: auto;
-            max-width: 1024px;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            position: relative;
-        }
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
 
-        .box {
-            width: auto;
-            height: 500px;
-            background: #fff;
-            margin-top: 50px;
-            margin-left: 100px;
-            margin-right: 100px;
-            border-radius: 5px;
-            box-shadow: 6px 18px 18px rgba(0, 0, 0, 0.08), -6px 18px 18px rgba(0, 0, 0, 0.08);
-        }
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-        .animation {
-            margin-top: 20%;
-            display: inline-block;
-            margin-bottom: 5%;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 400;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        p {
-            font-size: 16px;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        a {
-            color: #f6921e;
-            font-weight: bold;
-            text-decoration: none;
-            margin-left: 5px;
-        }
-
-        .one,
-        .two,
-        .three {
-            display: block;
-            float: left;
-        }
-
-        .one {
-            background: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%0A%09%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Aa%3D%22http%3A%2F%2Fns.adobe.com%2FAdobeSVGViewerExtensions%2F3.0%2F%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2281px%22%20height%3D%2280.5px%22%20viewBox%3D%220%200%2081%2080.5%22%20style%3D%22overflow%3Ascroll%3Benable-background%3Anew%200%200%2081%2080.5%3B%22%0A%09%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%09.st0%7Bfill%3A%23383838%3B%7D%0A%3C%2Fstyle%3E%0A%3Cdefs%3E%0A%3C%2Fdefs%3E%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M30.3%2C68.2c1.2%2C0.2%2C2.3%2C0.9%2C3.8%2C1.2c1.6%2C0.3%2C2.7%2C0.6%2C4%2C0.4l4.9%2C9.6c0.6%2C0.9%2C1.4%2C1.1%2C2.3%2C0.9l15.3-4.9%0A%09c0.5-0.3%2C1-1%2C0.9-2.3l-1.8-10.6c2-1.6%2C3.6-3.7%2C5.3-5.8l10.5%2C0.6c1.1%2C0.6%2C2.1-0.4%2C2.3-1.1L81%2C40.7c0.2-0.8-0.4-2.1-1.1-2.3l-10.2-3.8%0A%09c-0.3-2.5-1.4-4.8-2.5-7.5l5.9-8.5c0.6-1.1%2C0.4-1.9-0.2-2.9l-12-10.7c-0.3-0.5-1.6-0.3-2.5%2C0.3l-8%2C6.9c-1.2-0.2-2.3-0.9-3.8-1.2%0A%09c-1.6-0.3-2.7-0.6-4-0.4L37.7%2C1c-0.6-0.9-1.4-1.1-2.3-0.9L20.1%2C5c-0.5%2C0.3-1%2C1-0.9%2C2.3l1.8%2C10.6c-2%2C1.6-3.6%2C3.7-5.3%2C5.8L5.3%2C23%0A%09c-0.8-0.2-1.7%2C0.4-2%2C1.6L0%2C40.2c-0.2%2C0.8%2C0.4%2C2.1%2C1.1%2C2.3l9.8%2C3.7c0.7%2C2.6%2C1.4%2C5.2%2C2.5%2C7.5l-6%2C8.9c-0.6%2C0.7-0.4%2C2%2C0.3%2C2.5l12%2C10.7%0A%09c0.7%2C0.5%2C1.9%2C0.8%2C2.4%2C0.1L30.3%2C68.2z%20M26.7%2C37.3c1.6-7.4%2C9.1-12.3%2C16.5-10.8S55.6%2C35.7%2C54%2C43.1c-1.6%2C7.4-9.1%2C12.3-16.5%2C10.7%0A%09C30.1%2C52.3%2C25.1%2C44.7%2C26.7%2C37.3L26.7%2C37.3z%22%2F%3E%0A%3C%2Fsvg%3E');
-            width: 80px;
-            height: 80px;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            margin-top: -10px;
-            margin-right: 8px;
-        }
-
-        .two {
-            background: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%0A%09%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Aa%3D%22http%3A%2F%2Fns.adobe.com%2FAdobeSVGViewerExtensions%2F3.0%2F%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%22103px%22%20height%3D%22103.7px%22%20viewBox%3D%220%200%20103%20103.7%22%0A%09%20style%3D%22overflow%3Ascroll%3Benable-background%3Anew%200%200%20103%20103.7%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%09.st0%7Bfill%3A%23F6921E%3B%7D%0A%3C%2Fstyle%3E%0A%3Cdefs%3E%0A%3C%2Fdefs%3E%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M87.3%2C64.8c0.3-1.5%2C1.1-2.9%2C1.6-4.9c0.4-2%2C0.7-3.5%2C0.5-5.1l12.3-6.3c1.2-0.8%2C1.4-1.8%2C1.1-2.9l-6.3-19.6%0A%09c-0.4-0.6-1.3-1.3-2.9-1.1l-13.5%2C2.3c-2.1-2.5-4.7-4.7-7.4-6.8l0.8-13.4C74.3%2C5.8%2C73%2C4.5%2C72%2C4.3L52.1%2C0c-1-0.2-2.7%2C0.5-2.9%2C1.5%0A%09l-4.8%2C13c-3.2%2C0.4-6.1%2C1.8-9.5%2C3.2l-10.9-7.5c-1.4-0.8-2.5-0.5-3.7%2C0.3L6.5%2C25.8c-0.6%2C0.4-0.4%2C2%2C0.4%2C3.2l8.8%2C10.2%0A%09c-0.3%2C1.5-1.1%2C2.9-1.5%2C4.9c-0.4%2C2-0.7%2C3.5-0.6%2C5.1L1.2%2C55.4c-1.2%2C0.8-1.4%2C1.8-1.1%2C2.9l6.3%2C19.6c0.4%2C0.6%2C1.3%2C1.3%2C2.9%2C1.1l13.5-2.3%0A%09c2.1%2C2.5%2C4.7%2C4.7%2C7.4%2C6.8l-0.8%2C13.4c-0.2%2C1%2C0.6%2C2.2%2C2.1%2C2.5l20%2C4.2c1%2C0.2%2C2.7-0.5%2C2.9-1.5l4.7-12.6c3.3-0.9%2C6.6-1.7%2C9.5-3.2L80.1%2C94%0A%09c0.9%2C0.7%2C2.5%2C0.5%2C3.2-0.4L97%2C78.3c0.7-0.9%2C1-2.4%2C0.1-3.1L87.3%2C64.8z%20M47.8%2C69.5C38.3%2C67.5%2C32%2C57.8%2C34%2C48.3%0A%09c2-9.5%2C11.7-15.8%2C21.2-13.8c9.5%2C2%2C15.7%2C11.7%2C13.7%2C21.2C66.9%2C65.2%2C57.3%2C71.5%2C47.8%2C69.5L47.8%2C69.5z%22%2F%3E%0A%3C%2Fsvg%3E');
-            width: 100px;
-            height: 100px;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
-
-        /* pap */
-        /*
-.two {
-  background: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%0A%09%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Aa%3D%22http%3A%2F%2Fns.adobe.com%2FAdobeSVGViewerExtensions%2F3.0%2F%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%22103px%22%20height%3D%22103.7px%22%20viewBox%3D%220%200%20103%20103.7%22%0A%09%20style%3D%22overflow%3Ascroll%3Benable-background%3Anew%200%200%20103%20103.7%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%09.st0%7Bfill%3A%235197d6%3B%7D%0A%3C%2Fstyle%3E%0A%3Cdefs%3E%0A%3C%2Fdefs%3E%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M87.3%2C64.8c0.3-1.5%2C1.1-2.9%2C1.6-4.9c0.4-2%2C0.7-3.5%2C0.5-5.1l12.3-6.3c1.2-0.8%2C1.4-1.8%2C1.1-2.9l-6.3-19.6%0A%09c-0.4-0.6-1.3-1.3-2.9-1.1l-13.5%2C2.3c-2.1-2.5-4.7-4.7-7.4-6.8l0.8-13.4C74.3%2C5.8%2C73%2C4.5%2C72%2C4.3L52.1%2C0c-1-0.2-2.7%2C0.5-2.9%2C1.5%0A%09l-4.8%2C13c-3.2%2C0.4-6.1%2C1.8-9.5%2C3.2l-10.9-7.5c-1.4-0.8-2.5-0.5-3.7%2C0.3L6.5%2C25.8c-0.6%2C0.4-0.4%2C2%2C0.4%2C3.2l8.8%2C10.2%0A%09c-0.3%2C1.5-1.1%2C2.9-1.5%2C4.9c-0.4%2C2-0.7%2C3.5-0.6%2C5.1L1.2%2C55.4c-1.2%2C0.8-1.4%2C1.8-1.1%2C2.9l6.3%2C19.6c0.4%2C0.6%2C1.3%2C1.3%2C2.9%2C1.1l13.5-2.3%0A%09c2.1%2C2.5%2C4.7%2C4.7%2C7.4%2C6.8l-0.8%2C13.4c-0.2%2C1%2C0.6%2C2.2%2C2.1%2C2.5l20%2C4.2c1%2C0.2%2C2.7-0.5%2C2.9-1.5l4.7-12.6c3.3-0.9%2C6.6-1.7%2C9.5-3.2L80.1%2C94%0A%09c0.9%2C0.7%2C2.5%2C0.5%2C3.2-0.4L97%2C78.3c0.7-0.9%2C1-2.4%2C0.1-3.1L87.3%2C64.8z%20M47.8%2C69.5C38.3%2C67.5%2C32%2C57.8%2C34%2C48.3%0A%09c2-9.5%2C11.7-15.8%2C21.2-13.8c9.5%2C2%2C15.7%2C11.7%2C13.7%2C21.2C66.9%2C65.2%2C57.3%2C71.5%2C47.8%2C69.5L47.8%2C69.5z%22%2F%3E%0A%3C%2Fsvg%3E');
-  width:100px;
-  height:100px;
-  background-size:100% 100%;
-  background-repeat:no-repeat;
-}
-*/
-        /* pap */
-
-        .three {
-            background: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%0A%09%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Aa%3D%22http%3A%2F%2Fns.adobe.com%2FAdobeSVGViewerExtensions%2F3.0%2F%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2281px%22%20height%3D%2280.5px%22%20viewBox%3D%220%200%2081%2080.5%22%20style%3D%22overflow%3Ascroll%3Benable-background%3Anew%200%200%2081%2080.5%3B%22%0A%09%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%09.st0%7Bfill%3A%23383838%3B%7D%0A%3C%2Fstyle%3E%0A%3Cdefs%3E%0A%3C%2Fdefs%3E%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M30.3%2C68.2c1.2%2C0.2%2C2.3%2C0.9%2C3.8%2C1.2c1.6%2C0.3%2C2.7%2C0.6%2C4%2C0.4l4.9%2C9.6c0.6%2C0.9%2C1.4%2C1.1%2C2.3%2C0.9l15.3-4.9%0A%09c0.5-0.3%2C1-1%2C0.9-2.3l-1.8-10.6c2-1.6%2C3.6-3.7%2C5.3-5.8l10.5%2C0.6c1.1%2C0.6%2C2.1-0.4%2C2.3-1.1L81%2C40.7c0.2-0.8-0.4-2.1-1.1-2.3l-10.2-3.8%0A%09c-0.3-2.5-1.4-4.8-2.5-7.5l5.9-8.5c0.6-1.1%2C0.4-1.9-0.2-2.9l-12-10.7c-0.3-0.5-1.6-0.3-2.5%2C0.3l-8%2C6.9c-1.2-0.2-2.3-0.9-3.8-1.2%0A%09c-1.6-0.3-2.7-0.6-4-0.4L37.7%2C1c-0.6-0.9-1.4-1.1-2.3-0.9L20.1%2C5c-0.5%2C0.3-1%2C1-0.9%2C2.3l1.8%2C10.6c-2%2C1.6-3.6%2C3.7-5.3%2C5.8L5.3%2C23%0A%09c-0.8-0.2-1.7%2C0.4-2%2C1.6L0%2C40.2c-0.2%2C0.8%2C0.4%2C2.1%2C1.1%2C2.3l9.8%2C3.7c0.7%2C2.6%2C1.4%2C5.2%2C2.5%2C7.5l-6%2C8.9c-0.6%2C0.7-0.4%2C2%2C0.3%2C2.5l12%2C10.7%0A%09c0.7%2C0.5%2C1.9%2C0.8%2C2.4%2C0.1L30.3%2C68.2z%20M26.7%2C37.3c1.6-7.4%2C9.1-12.3%2C16.5-10.8S55.6%2C35.7%2C54%2C43.1c-1.6%2C7.4-9.1%2C12.3-16.5%2C10.7%0A%09C30.1%2C52.3%2C25.1%2C44.7%2C26.7%2C37.3L26.7%2C37.3z%22%2F%3E%0A%3C%2Fsvg%3E');
-            width: 80px;
-            height: 80px;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            margin-top: -50px;
-            margin-left: -10px;
-        }
-
-        @keyframes spin-one {
-            0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(-359deg);
-                transform: rotate(-359deg);
-            }
-        }
-
-        .spin-one {
-            -webkit-animation: spin-one 1.5s infinite linear;
-            animation: spin-one 1.5s infinite linear;
-        }
-
-        @keyframes spin-two {
-            0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(-359deg);
-                transform: rotate(359deg);
-            }
-        }
-
-        .spin-two {
-            -webkit-animation: spin-two 2s infinite linear;
-            animation: spin-two 2s infinite linear;
-        }
-    </style>
+    <title>Feierstein Chad | Portfolio</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="box">
-            <div class="animation">
-                <div class="one spin-one"></div>
-                <div class="two spin-two"></div>
-                <div class="three spin-one"></div>
-            </div>
-            <h1>UNTER WARTUNG</h1>
-            <p>Die Website wird derzeit gewartet.</p>
-        </div>
+    <!--======= Scroll to top button =======-->
+    <div class="scrollToTop-btn flex-center">
+        <i class="fas fa-arrow-up"></i>
     </div>
+
+    <!--======= Light/Dark theme button =======-->
+    <div class="theme-btn flex-center">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <!--======= Header =======-->
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo">Feierstein Chad</a>
+            <div class="navigation">
+                <div class="nav-items">
+                    <i class="fa-solid fa-rectangle-xmark nav-close-btn"></i>
+                    <a href="#home">Home</a>
+                    <a href="#about">Über mich</a>
+                    <a href="#skills">Fähigkeiten</a>
+                    <a href="#projects">Projekte</a>
+                    <a href="#hobbies">Hobby</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+            </div>
+            <div class="nav-menu-btn"> <i class="fa-solid fa-bars"></i> </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!--======= Home section =====-->
+        <section class="home flex-center" id="home">
+            <div class="home-container">
+                <div class="media-icons">
+                    <a href="https://www.linkedin.com/in/chad-feierstein/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/chad.feierstein.7/" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/feiersteinchad/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+                <div class="info">
+                    <h2>Hallo, ich bin Chad</h2>
+                    <h3>Student mit Abschluss</h3>
+                    <p>Herzlich willkommen auf meiner Portfolio-Website!
+                        <br>Hier habe ich eine Plattform geschaffen, um meine schulischen und beruflichen Aktivitäten
+                        mit umfassenden Details zu präsentieren.
+                        Bei weiteren Fragen stehe ich Ihnen gerne zur Verfügung, zögern Sie nicht, mich zu kontaktieren.
+                    </p>
+                    <a href="#contact" class="btn"> Kontakt <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="home-img">
+                    <img src="img/main-img.png" alt="">
+                </div>
+            </div>
+            <a href="#about" class="scroll-down">Nach unten scrollen <i class="fas fa-arrow-down"></i></a>
+        </section>
+
+        <!--======= About section =====-->
+        <section class="about section" id="about">
+            <div class="container flex-center">
+                <h1 class="section-title-01">Über mich</h1>
+                <h2 class="section-title-02">Über mich</h2>
+                <div class="content flex-center">
+                    <div class="about-img">
+                        <img src="img/about-img.png" alt="">
+                    </div>
+                    <div class="about-info">
+                        <div class="description">
+                            <h3>Ich heiße Chad Feierstein</h3>
+                            <h4>Ein junger, motivierter <span>absolventer</span> Student</h4>
+                            <p>Mein Name ist Chad Feierstein, ich stamme aus dem zauberhaften Luxemburg und lebe
+                                gegenwärtig in Rumelange.
+                                Meine Leidenschaft für Technologie treibt mich dazu an, ständig neue Technologien zu
+                                erforschen und mich kontinuierlich weiterzuentwickeln.
+                                Eine meiner herausragenden Eigenschaften besteht darin, dass ich Freude am Lernen habe.
+                                Dies hat mir bisher in meiner schulischen Laufbahn stets geholfen, und ich bin
+                                überzeugt, dass es auch in der Welt der Informationstechnologie von großem Nutzen sein
+                                wird.</p>
+                        </div>
+                        <ul class="professional-list">
+                            <li class="list-item">
+                                <h3 id="age">22</h3>
+                                <span>Jahre alt</span>
+                            </li>
+                            <li class="list-item">
+                                <h3>9</h3>
+                                <span>Schuljahre</span>
+                            </li>
+                            <li class="list-item">
+                                <h3>4</h3>
+                                <span>Ausbildungsjahre</span>
+                            </li>
+                            <li class="list-item">
+                                <h3>2</h3>
+                                <span>Studienjahre</span>
+                            </li>
+                        </ul>
+                        <a href="" class="btn">Lebenslauf herunterladen <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--======= Skills section =====-->
+        <section class="skills section" id="skills">
+            <div class="container flex-center">
+                <h1 class="section-title-01">Fähigkeiten</h1>
+                <h2 class="section-title-02">Fähigkeiten</h2>
+                <div class="content">
+                    <div class="skills-description">
+                        <h3>Kompetenzen</h3>
+                        <p>In diesem Abschnitt können Sie meine Schullaufbahn sehen, in der ich wichtige Meilensteine
+                            erreicht habe.</p>
+                    </div>
+                    <div class="skills-info education-all">
+                        <div class="education">
+                            <h4><label><i class="fa-solid fa-graduation-cap"></i> Bildung</label></h4>
+                            <ul class="edu-list">
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2021</span>
+                                    <p>
+                                        <span>Höherer technischer Abschluss (Brevet de Technicien Supérieur)</span>
+                                        <br>Fachrichtung: Cloud Computing
+                                        <br>Diplom (mit Bewertung: Gut)
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2019-2021</span>
+                                    <a href="https://www.lgk.lu/bts/clc/" target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>Höherer technischer Abschluss (Brevet de Technicien Supérieur)</span>
+                                        <br>Fachrichtung: Cloud Computing
+                                        <br>im Lycée Guillaume Kroll in Esch-sur-Alzette
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2019</span>
+                                    <p>
+                                        <span>Techniker in der Informatik</span>
+                                        <br>Diplom (mit Bewertung: Gut)
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2015-2019</span>
+                                    <a href="https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap"
+                                        target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>Techniker in der Informatik</span>
+                                        <br>im Lycée Guillaume Kroll in Esch-sur-Alzette
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="education">
+                            <h4><label><i class="fa-solid fa-language"></i> Sprachen</label></h4>
+                            <ul class="bars">
+                                <li class="bar">
+                                    <div class="info">
+                                        <img src="img/flags/lu.svg" alt="">
+                                        <span>Luxemburgisch</span>
+                                        <span>C2</span>
+                                    </div>
+                                    <div class="line p-100"></div>
+                                </li>
+
+                                <li class="bar">
+                                    <div class="info">
+                                        <img src="img/flags/de.svg" alt="">
+                                        <span>Deutsch</span>
+                                        <span>C2</span>
+                                    </div>
+                                    <div class="line p-100"></div>
+                                </li>
+
+                                <li class="bar">
+                                    <div class="info">
+                                        <img src="img/flags/fr.svg" alt="">
+                                        <span>Französisch</span>
+                                        <span>B2</span>
+                                    </div>
+                                    <div class="line p-70"></div>
+                                </li>
+
+                                <li class="bar">
+                                    <div class="info">
+                                        <img src="img/flags/gb.svg" alt="">
+                                        <span>Englisch</span>
+                                        <span>C1</span>
+                                    </div>
+                                    <div class="line p-90"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="education">
+                            <h4><label><i class="fa-solid fa-certificate"></i> Zertifizierungen</label></h4>
+                            <ul class="edu-list">
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2021</span>
+                                    <a href="https://learningnetwork.cisco.com/s/cbrops-exam-topics?ccid=cyberopsassociate"
+                                        target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>
+                                            <i class="fa-solid fa-file-circle-check"></i> Cisco Certified CyberOps
+                                            Associate
+                                        </span>
+                                        <br>Course Completion
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2021</span>
+                                    <a href="https://www.netacad.com/courses/networking/ccna-enterprise-networking-security-automation"
+                                        target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>
+                                            <i class="fa-solid fa-file-circle-check"></i> Cisco Certified Network
+                                            Associate 3
+                                        </span>
+                                        <br>7.0 Enterprise Networking, Security, and Automation
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2020</span>
+                                    <a href="https://www.netacad.com/courses/networking/ccna-switching-routing-wireless-essentials"
+                                        target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>
+                                            <i class="fa-solid fa-file-circle-check"></i> Cisco Certified Network
+                                            Associate 2
+                                        </span>
+                                        <br>7.0 Switching, Routing, and Wireless Essentials
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2020</span>
+                                    <a href="https://www.netacad.com/courses/networking/ccna-introduction-networks"
+                                        target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>
+                                            <i class="fa-solid fa-file-circle-check"></i> Cisco Certified Network
+                                            Associate 1
+                                        </span>
+                                        <br>7.0 Introduction to Networks
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <span class="year"><i class="fa-regular fa-calendar"></i> 2020</span>
+                                    <a href="https://learn.microsoft.com/en-us/certifications/microsoft-office-specialist-master-certification-2016/"
+                                        target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                    <p>
+                                        <span>
+                                            <i class="fa-solid fa-file-circle-check"></i> Microsoft Office Specialist
+                                            2016
+                                        </span>
+                                        <br>PowerPoint, Word, Word expert, Outlook, Excel
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skills-description">
+                        <h3>Arbeit & Erfahrung</h3>
+                        <p>Mehrere Jahre lang konnte ich Berufserfahrung sammeln.
+                            Ich konnte sowohl selbstständig als auch in einem Team an Projekten arbeiten.</p>
+                    </div>
+
+                    <!-- 1. WORK -->
+
+                    <div class="skills-info education-all">
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>IT Cloud Engineer</h3>
+                                <h5>Praktikum | 12 Wochen</h5>
+                                <span><i class="fa-regular fa-calendar"></i> 2021</span>
+                            </div>
+                            <div class="hr"></div>
+                            <h4><label>QPark Consulting</label></h4>
+                            <p>Ein Praktikum bei QPark Consulting, wo ich drei Monate lang an zwei großen Projekten
+                                gearbeitet habe.
+                            </p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>QPark Consulting</h3>
+                                <h4>IT Cloud Engineer | Praktikum | 12 Wochen</h4>
+                                <p>Ein Praktikum bei QPark Consulting, wo ich drei Monate lang an zwei großen Projekten
+                                    gearbeitet habe Monate gearbeitet habe.</p>
+                                <h4>Aufgaben</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Erstellung eines Plans für ein Projekt mit
+                                        agilen
+                                        Methoden</li>
+                                    <li><i class="fas fa-check-circle"></i> Erstellung und Konfiguration von virtuellen
+                                        Maschinen
+                                        (Google Cloud Platform)</li>
+                                    <li><i class="fas fa-check-circle"></i> Implementierung einer Website in einer
+                                        virtuellen
+                                        Maschine (Google Cloud Platform)</li>
+                                    <li><i class="fas fa-check-circle"></i> Implementierung einer statischen Website auf
+                                        AWS S3
+                                        Bucket für Kosteneffizienz (Amazon Web Services)</li>
+                                    <li><i class="fas fa-check-circle"></i> Abrufen und Transformieren von Daten aus
+                                        einer vorhandenen REST
+                                        API (Amazon Web Services)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 2. WORK -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>IT-Techniker</h3>
+                                <h5>Ferienjob | 8 Wochen</h5>
+                                <span><i class="fa-regular fa-calendar"></i> 2020</span>
+                            </div>
+                            <div class="hr"></div>
+                            <h4><label>Lycée Guillaume Kroll</label></h4>
+                            <p>Ein Ferienjob am Lycée Guillaume Kroll, wo ich zwei Monate lang in der IT-Abteilung
+                                mitgearbeitet habe.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Lycée Guillaume Kroll</h3>
+                                <h4>IT-Techniker | Ferienjob | 8 Wochen</h4>
+                                <p>Ein Ferienjob am Lycée Guillaume Kroll, wo ich zwei Monate lang in der IT-Abteilung
+                                    mitgearbeitet habe.</p>
+                                <h4>Aufgaben</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Einrichten der von MIXvoip bereitgestellten
+                                        Telefone</li>
+                                    <li><i class="fas fa-check-circle"></i> Verwalten der von MIXvoip bereitgestellten
+                                        Telefone</li>
+                                    <li><i class="fas fa-check-circle"></i> Die neuen Telefonanschlüsse im Rackraum nach
+                                        Plan angeschlossen</li>
+                                    <li><i class="fas fa-check-circle"></i> Veränderung eines Plans für die Patchstellen
+                                        in Microsoft Excel</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 3. WORK -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>IT-Techniker</h3>
+                                <h5>Ferienjob | 4 Wochen</h5>
+                                <span><i class="fa-regular fa-calendar"></i> 2019</span>
+                            </div>
+                            <div class="hr"></div>
+                            <h4><label>Lycée Guillaume Kroll</label></h4>
+                            <p>Ein Ferienjob am Lycée Guillaume Kroll, wo ich einen Monat lang ein Projekt abgeschlossen
+                                habe, ...</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Lycée Guillaume Kroll</h3>
+                                <h4>IT-Techniker | Ferienjob | 4 Wochen</h4>
+                                <p>Ein Ferienjob am Lycée Guillaume Kroll, wo ich einen Monat lang ein Projekt
+                                    abgeschlossen habe, das ich
+                                    das ich während meines Praktikums begonnen hatte.</p>
+                                <h4>Aufgaben</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Geplante Kundenbesprechungen</li>
+                                    <li><i class="fas fa-check-circle"></i> Das Back-End für eine
+                                        Website programmiert und modifiziert </li>
+                                    <li><i class="fas fa-check-circle"></i> Erstellt eine Verbindung zu einem SAML
+                                        Authentifizierungsdienst</li>
+                                    <li><i class="fas fa-check-circle"></i> Das Front-End für eine
+                                        Website programmiert und modifiziert</li>
+                                    <li><i class="fas fa-check-circle"></i> Alte Computer fachgerecht entsorgt und die
+                                        Festplatten
+                                        formatiert</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 4. WORK -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>IT-Techniker</h3>
+                                <h5>Praktikum | 6 Wochen</h5>
+                                <span><i class="fa-regular fa-calendar"></i> 2019</span>
+                            </div>
+                            <div class="hr"></div>
+                            <h4><label>Lycée Guillaume Kroll</label></h4>
+                            <p>Ein Praktikum am Lycée Guillaume Kroll, wo ich hauptsächlich sechs Wochen verbrachte, um
+                                ein Projekt
+                                für eine Website.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Lycée Guillaume Kroll</h3>
+                                <h4>IT-Techniker | Praktikum | 6 Wochen</h4>
+                                <p>Ein Praktikum am Lycée Guillaume Kroll, wo ich hauptsächlich sechs Wochen verbrachte,
+                                    um ein Projekt
+                                    für eine Website.</p>
+                                <h4>Aufgaben</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Geplante Kundenbesprechungen</li>
+                                    <li><i class="fas fa-check-circle"></i> Das Back-End für eine
+                                        Website programmiert und modifiziert </li>
+                                    <li><i class="fas fa-check-circle"></i> Das Front-End für eine
+                                        Website programmiert und modifiziert</li>
+                                    <li><i class="fas fa-check-circle"></i> Erstellung eines konzeptionellen
+                                        Datenmodells für eine
+                                        Datenbank</li>
+                                    <li><i class="fas fa-check-circle"></i> Erstellung eines logischen Datenmodells für
+                                        eine Datenbank
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> Eine Datenbank mit den richtigen Feldern
+                                        erstellt,
+                                        Datentypen und Beziehungen</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 5. WORK -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>IT-Netzwerktechniker</h3>
+                                <h5>Praktikum | 6 Wochen</h5>
+                                <span><i class="fa-regular fa-calendar"></i> 2016</span>
+                            </div>
+                            <div class="hr"></div>
+                            <h4><label>STEP</label></h4>
+                            <p>Ein Praktikum bei STEP Syndicat intercommunal in Peppange, wo ich eine Menge über IT
+                                Netzwerke gelernt habe.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>STEP Syndicat intercommunal</h3>
+                                <h4>IT-Netzwerktechniker | Praktikum | 6 Wochen</h4>
+                                <p>Ein Praktikum bei STEP Syndicat intercommunal in Peppange, wo ich eine Menge über IT
+                                    Netzwerke gelernt habe.</p>
+                                <h4>Aufgaben</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Erstellung eines neuen Plans für das interne
+                                        Patchpanel</li>
+                                    <li><i class="fas fa-check-circle"></i> Nach dem neuen Plan die Patchkabel gepatcht
+                                        und neu beschriftet</li>
+                                    <li><i class="fas fa-check-circle"></i> Viel über die praktische interne
+                                        Netzwerkstruktur gelernt</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skills-description">
+                        <h3>Andere Fähigkeiten</h3>
+                        <p>Programme, Software, Dienste und andere Dinge, die ich während meiner Ausbildung, meines
+                            Studiums oder meiner Arbeit genutzt habe.
+                        </p>
+                    </div>
+
+                    <!-- 1. SKILL -->
+
+                    <div class="skills-info">
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Pubic Cloud Provider</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <p>Pubic Cloud Provider mit denen ich gearbeitet habe.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Pubic Cloud Provider</h3>
+                                <h4>Amazon Web Services</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Simple Storage Service</li>
+                                    <li><i class="fas fa-check-circle"></i> Elastic Compute Cloud</li>
+                                    <li><i class="fas fa-check-circle"></i> Relational Database Service</li>
+                                    <li><i class="fas fa-check-circle"></i> Virtual Private Cloud</li>
+                                    <li><i class="fas fa-check-circle"></i> Elastic Beanstalk</li>
+                                    <li><i class="fas fa-check-circle"></i> Identity Access Management</li>
+                                    <li><i class="fas fa-check-circle"></i> Lambda</li>
+                                </ul>
+                                <h4>Google Cloud Platform</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Compute Engine</li>
+                                </ul>
+                                <h4>Microsoft Azure</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Linux Virtual Machines</li>
+                                    <li><i class="fas fa-check-circle"></i> Virtual Machines</li>
+                                    <li><i class="fas fa-check-circle"></i> Static Web Apps</li>
+                                    <li><i class="fas fa-check-circle"></i> Functions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 2. SKILL -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Virtualisierung</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <p>Type 1 & 2 Hypervisor oder Container Software</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Virtualisierung</h3>
+                                <h4>Type 1 Hypervisor</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> VMware ESXi</li>
+                                    <li><i class="fas fa-check-circle"></i> Proxmox (unter Verwendung von KVM)</li>
+                                </ul>
+                                <h4>Type 2 Hypervisor</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> VMware Workstation</li>
+                                    <li><i class="fas fa-check-circle"></i> VirtualBox</li>
+                                </ul>
+                                <h4>Container Software</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Docker</li>
+                                    <li><i class="fas fa-check-circle"></i> Docker Swarm</li>
+                                    <li><i class="fas fa-check-circle"></i> Kubernetes (Orchestrierungssystem)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 3. SKILL -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Betriebssysteme</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <p>Die Betriebssysteme, mit denen ich bisher Erfahrungen gesammelt habe.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Betriebssysteme</h3>
+                                <h4>Windows</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Windows 7</li>
+                                    <li><i class="fas fa-check-circle"></i> Windows 8</li>
+                                    <li><i class="fas fa-check-circle"></i> Windows 10</li>
+                                    <li><i class="fas fa-check-circle"></i> Windows 11</li>
+                                    <li><i class="fas fa-check-circle"></i> Windows Server 2012</li>
+                                    <li><i class="fas fa-check-circle"></i> Windows Server 2016</li>
+                                    <li><i class="fas fa-check-circle"></i> Windows Server 2019</li>
+                                </ul>
+                                <h4>Linux</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Ubuntu</li>
+                                    <li><i class="fas fa-check-circle"></i> Debian</li>
+                                    <li><i class="fas fa-check-circle"></i> KaliLinux</li>
+                                    <li><i class="fas fa-check-circle"></i> Raspberry Pi OS</li>
+                                </ul>
+                                <h4>Anderes</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Cisco IOS</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 4. SKILL -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Office-Software</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <p>Microsoft Office Software die ich auswendig kenne.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Office-Software</h3>
+                                <h4>Microsoft Office</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft Word</li>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft PowerPoint</li>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft Access</li>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft Outlook</li>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft Teams</li>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft Onedrive</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 5. SKILL -->
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Programmierung</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <p>Verschiedene Programmiersprachen die ich behersche.</p>
+                            <div class="experience-learn-more-btn">Mehr erfahren <i
+                                    class="fas fa-long-arrow-alt-right"></i></div>
+                        </div>
+
+                        <div class="experience-modal flex-center">
+                            <div class="experience-modal-body">
+                                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                                <h3>Programmierung</h3>
+                                <h4>Script-Sprache</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Microsoft PowerShell</li>
+                                    <li><i class="fas fa-check-circle"></i> Linux Bash</li>
+                                    <li><i class="fas fa-check-circle"></i> Python</li>
+                                </ul>
+                                <h4>Web-Entwicklung</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> HTML</li>
+                                    <li><i class="fas fa-check-circle"></i> CSS</li>
+                                    <li><i class="fas fa-check-circle"></i> JavaScript (einschließlich jQuery)</li>
+                                    <li><i class="fas fa-check-circle"></i> PHP</li>
+                                </ul>
+                                <h4>Datenbank-Sprache</h4>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> SQL</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Planning</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <ul>
+                                <li>JIRA</li>
+                                <li>Scrum</li>
+                                <li>Kanban</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="upper">
+                                <h3>Andere</h3>
+                            </div>
+                            <div class="hr"></div>
+                            <ul>
+                                <li>Visual Studio Code</li>
+                                <li>Apache2</li>
+                                <li>Microsoft IIS</li>
+                                <li>Active Directory</li>
+                                <li>FTP Server & FTP Client</li>
+                                <li>Cisco Packet Tracer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects section" id="projects">
+            <div class="container flex-center">
+                <h1 class="section-title-01">Projekte</h1>
+                <h2 class="section-title-02">Projekte</h2>
+                
+                <div class="content">
+                    <div class="project-card">
+                        <div class="project-title flex-center">
+                            <h3>FFA | Fit fir den Aarbechtsmaart</h3>
+                        </div>
+
+                        <div class="project-btns flex-center">
+                            <label class="project-description-btn active">Description</label>
+                            <label class="project-implementation-btn">Implementation</label>
+                            <label class="project-software-btn">Software</label>
+                        </div>
+
+                        <div class="hr"></div>
+
+                        <div class="project-content">
+                            <div class="project-cover">
+                                <img src="./img/projects/project-ffa.jpg" alt="">
+                            </div>
+                            <div class="project-text">
+
+                                <div class="project-description show">
+                                    <h3>Description</h3>
+                                    <p>This project was about creating a website for my school. My school needed the
+                                        website
+                                        to allow students to enroll in company interviews and company presentations. And
+                                        everything should be managed via an admin panel.</p>
+                                </div>
+
+                                <div class="project-implementation">
+                                    <h3>Implementation</h3>
+                                    <p>The project was at the beginning a competition among other students for a prize.
+                                        My group of three people won the competition.</p>
+                                    <p>After the competition was finished, I got a request to develop the website
+                                        further
+                                        and finally publish it.
+                                        The use case and functions of the website have expanded dramatically in the
+                                        meantime.
+                                        To determine these functions, there were regular meetings with the client.</p>
+                                    <p>I worked on this project for over 500 hours.</p>
+                                </div>
+
+                                <div class="project-software hide">
+                                    <h3>Software</h3>
+                                    <p>During the project I worked on the Ubuntu 20.04 LTS operating system, the website
+                                        was then hosted on an Apache2 web server. I programmed the website with Visual
+                                        Studio code, and automatically uploaded it to the Apache2 folder with an SFTP
+                                        plugin. The back-end ran via PHP and the front-end via Javascript.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="hobbies section" id="hobbies">
+            <div class="container flex-center">
+                <h1 class="section-title-01">Hobby</h1>
+                <h2 class="section-title-02">Hobby</h2>
+                <div class="content">
+                    <div class="hobby-list">
+                        <div class="img-card-container">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Programmierung</h3>
+                                    <span>Meine Kreativität ausleben</span>
+                                </div>
+                                <img src="img/hobbies/hobby-img1.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="img-card-container">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Lernen</h3>
+                                    <span>Meine Kenntnisse erweitern</span>
+                                </div>
+                                <img src="img/hobbies/hobby-img2.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="img-card-container">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Wandern</h3>
+                                    <span>Schritt für Schritt zum Ziel</span>
+                                </div>
+                                <img src="img/hobbies/hobby-img3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact section" id="contact">
+            <div class="container flex-center">
+                <h1 class="section-title-01">Kontakt</h1>
+                <h2 class="section-title-02">Kontakt</h2>
+                <div class="content">
+                    <div class="contact-left">
+                        <p>Kontaktieren Sie mich privat...</p>
+                        <ul class="contact-list">
+                            <li>
+                                <h3 class="item-title"><i class="fas fa-phone"></i> Telefon</h3>
+                                <span>*Aus Sicherheitsgründen entfernt*</span>
+                            </li>
+                            <li>
+                                <h3 class="item-title"><i class="fas fa-envelope"></i> E-Mail Adresse</h3>
+                                <span><a href="mailto:mail@chad.lu">mail@chad.lu</a></span>
+                            </li>
+                            <li>
+                                <h3 class="item-title"><i class="fas fa-map-marker-alt"></i> Offizielle Adresse</h3>
+                                <span>*Aus Sicherheitsgründen entfernt*</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact-right">
+                        <p>...oder über eine Plattform der sozialen Medien.</p>
+                        <ul class="contact-list">
+                            <li>
+                                <h3 class="item-title"><i class="fab fa-linkedin"></i> LinkedIn</h3>
+                                <span><a href="https://www.linkedin.com/in/chad-feierstein/"
+                                        target="_blank">@Chad-Feierstein</a></span>
+                            </li>
+                            <li>
+                                <h3 class="item-title"><i class="fab fa-facebook"></i> Facebook</h3>
+                                <span><a href="https://www.facebook.com/chad.feierstein.7/" target="_blank">@Chad
+                                        Feierstein</a></span>
+                            </li>
+                            <li>
+                                <h3 class="item-title"><i class="fab fa-instagram"></i> Instagram</h3>
+                                <span><a href="https://www.instagram.com/feiersteinchad/"
+                                        target="_blank">@feiersteinchad</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!--======Footer======-->
+    <footer>
+        <p>© 2024 by Chad Feierstein. Alle Rechte vorbehalten.<br>Website gehostet auf <a
+                href="https://www.cloudflare.com/" target="_blank"> Cloudflare <i
+                    class="fa-brands fa-cloudflare"></i></a></p>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
