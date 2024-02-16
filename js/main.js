@@ -1,91 +1,140 @@
+// =======================
+// Sticky navigation
+// =======================
 
-//Sticky navigation
 window.addEventListener("scroll", function () {
     const header = document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
 
-//Experience section Modal
+// =======================
+// Experience section Modal
+// =======================
+
+// Selecting modal elements
 const experienceModals = document.querySelectorAll(".experience-modal");
 const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
 const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
 
-var modal = function (modalClick) {
-    experienceModals[modalClick].classList.add("active");
-}
+// Function to open modal
+const openModal = (modal) => {
+    modal.classList.add("active");
+};
 
-experienceLearnMoreBtns.forEach((learnmoreBtn, i) => {
+// Function to close modal
+const closeModal = () => {
+    experienceModals.forEach((modalView) => {
+        modalView.classList.remove("active");
+    });
+};
+
+// Function to close modal when Escape key is pressed
+const closeOnEscape = (event) => {
+    if (event.key === "Escape") {
+        closeModal();
+        updateUrlParam(null);
+    }
+};
+
+// Function to update URL with modal ID
+const updateUrlParam = (modalId) => {
+    const url = new URL(window.location.href);
+    if (modalId) {
+        url.searchParams.set("modal", modalId);
+    } else {
+        url.searchParams.delete("modal");
+    }
+    history.pushState(null, null, url);
+};
+
+// Function to open modal based on URL parameter
+const openModalFromUrl = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const modalId = urlParams.get('modal');
+    if (modalId) {
+        const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+        if (modal) {
+            openModal(modal);
+        }
+    } else {
+        closeModal();
+    }
+};
+
+// Event listeners for clicking "Learn More" buttons
+experienceLearnMoreBtns.forEach((learnmoreBtn) => {
     learnmoreBtn.addEventListener("click", () => {
-        modal(i);
+        const modalTarget = learnmoreBtn.getAttribute("data-modal-target");
+        const modal = document.querySelector(`[data-modal-id="${modalTarget}"]`);
+        if (modal) {
+            openModal(modal);
+            updateUrlParam(modal.getAttribute("data-modal-id"));
+         } else {
+            console.error(`Modal with ID "${modalTarget}" not found.`);
+        }
     });
 });
 
+// Event listeners for clicking modal close buttons
 experienceModalCloseBtns.forEach((modalCloseBtn) => {
     modalCloseBtn.addEventListener("click", () => {
-        experienceModals.forEach((modalView) => {
-            modalView.classList.remove("active");
-        });
+        closeModal();
+        updateUrlParam(null);
     });
 });
 
+// Event listener for popstate event (e.g., back button press)
+window.addEventListener("popstate", () => {
+    openModalFromUrl();
+});
 
-//Calculate age
+// Event listener for DOMContentLoaded event (page load)
+window.addEventListener("DOMContentLoaded", () => {
+    openModalFromUrl();
+});
+
+// Event listener for keydown event (e.g., Escape key press)
+window.addEventListener("keydown", closeOnEscape);
+
+
+// =======================
+// Calculate age
+// =======================
+
 const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10);
 
 document.getElementById("age").innerText = getAge('1999-08-03');
 
 
+// =======================
 // Project Content Switch
-const projectDescriptionBtns = document.querySelectorAll(".project-description-btn");
-const projectImplementationBtns = document.querySelectorAll(".project-implementation-btn");
-const projectSoftwareBtns = document.querySelectorAll(".project-software-btn");
+// =======================
 
-const projectDescription = document.querySelectorAll(".project-description");
-const projectImplementation = document.querySelectorAll(".project-implementation");
-const projectSoftware = document.querySelectorAll(".project-software");
+const projectTabs = document.querySelectorAll('.project-description-btn, .project-implementation-btn, .project-software-btn');
+const projectSections = document.querySelectorAll('.project-description, .project-implementation, .project-software');
 
-projectDescriptionBtns.forEach((projectDescriptionBtn, i) => {
-    projectDescriptionBtn.addEventListener("click", () => {
-        projectDescriptionBtn.classList.add("active");
-        projectDescription[i].classList.add("show");
+function showProjectSection(index) {
+    projectSections.forEach(section => section.classList.remove('show'));
+    projectTabs.forEach(tab => tab.classList.remove('active'));
 
-        projectImplementation[i].classList.remove("show");
-        projectSoftware[i].classList.remove("show");
+    projectSections[index].classList.add('show');
+    projectTabs[index].classList.add('active');
+}
 
-        projectImplementationBtns[i].classList.remove("active");
-        projectSoftwareBtns[i].classList.remove("active");
+projectTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+        showProjectSection(index);
     });
 });
 
-projectImplementationBtns.forEach((projectImplementationBtn, i) => {
-    projectImplementationBtn.addEventListener("click", () => {
-        projectImplementationBtn.classList.add("active");
-        projectImplementation[i].classList.add("show");
-
-        projectDescription[i].classList.remove("show");
-        projectSoftware[i].classList.remove("show");
-
-        projectDescriptionBtns[i].classList.remove("active");
-        projectSoftwareBtns[i].classList.remove("active");
-    });
-});
-
-projectSoftwareBtns.forEach((projectSoftwareBtn, i) => {
-    projectSoftwareBtn.addEventListener("click", () => {
-        projectSoftwareBtn.classList.add("active");
-        projectSoftware[i].classList.add("show");
-
-        projectDescription[i].classList.remove("show");
-        projectImplementation[i].classList.remove("show");
-
-        projectDescriptionBtns[i].classList.remove("active");
-        projectImplementationBtns[i].classList.remove("active");
-    });
-});
+showProjectSection(0);
 
 
-//Website dark/Light theme
+// =======================
+// Website dark/Light theme
+// =======================
+
 const themeBtn = document.querySelector(".theme-btn");
 
 themeBtn.addEventListener("click", () => {
@@ -115,9 +164,10 @@ if (savedTheme) {
 }
 
 
+// =======================
+// Scroll to top button
+// =======================
 
-
-//Scroll to top button
 const scrollTopBtn = document.querySelector(".scrollToTop-btn");
 
 window.addEventListener("scroll", function () {
@@ -130,8 +180,10 @@ scrollTopBtn.addEventListener("click", () => {
 });
 
 
+// =======================
+// Navigation menu items active on page scroll
+// =======================
 
-//Navigation menu items active on page scroll
 window.addEventListener("scroll", () => {
     const sections = document.querySelectorAll("section");
     const scrollY = window.pageYOffset;
@@ -149,7 +201,11 @@ window.addEventListener("scroll", () => {
     });
 });
 
-//Responsive navigation menu toggle
+
+// =======================
+// Responsive navigation menu toggle
+// =======================
+
 const menuBtn = document.querySelector(".nav-menu-btn");
 const closeBtn = document.querySelector(".nav-close-btn");
 const navigation = document.querySelector(".navigation");
@@ -170,16 +226,9 @@ navItems.forEach((navItem) => {
     });
 });
 
-
-// Close all modals with "Escape"
-window.addEventListener("keydown", function (event) {
-    if (event.key === 'Escape') {
-        // Close navigation modals
+// Close navigation menu with "Escape" key
+window.addEventListener("keydown", (event) => {
+    if (event.key === 'Escape' && navigation.classList.contains("active")) {
         navigation.classList.remove("active");
-
-        // Close experience modals
-        experienceModals.forEach((modalView) => {
-            modalView.classList.remove("active");
-        });
     }
 });
