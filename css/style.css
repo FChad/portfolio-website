@@ -502,7 +502,7 @@ header.sticky .nav-bar {
     font-weight: 500;
 }
 
-.edu-list .item > a > i {
+.edu-list .item>a>i {
     position: absolute;
     top: 0;
     right: 0;
@@ -586,6 +586,29 @@ header.sticky .nav-bar {
     border-radius: 6px;
     box-shadow: var(--box-shadow);
     transition: .3s ease;
+}
+
+.experience-card.current-card {
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid var(--second-color);
+
+    animation: current-card-animation 4s infinite;
+}
+
+@keyframes current-card-animation {
+
+    0%,
+    100% {
+        border-color: transparent;
+        border-bottom-color: var(--second-color);
+    }
+
+    50% {
+        border-color: var(--second-color);
+        border-bottom-color: var(--second-color);
+    }
 }
 
 .experience-card .upper {
@@ -779,7 +802,7 @@ header.sticky .nav-bar {
     display: inline-block;
 }
 
-.project-text div:not(.show){
+.project-text div:not(.show) {
     display: none;
 }
 

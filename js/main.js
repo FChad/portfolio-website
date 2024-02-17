@@ -70,7 +70,7 @@ experienceLearnMoreBtns.forEach((learnmoreBtn) => {
         if (modal) {
             openModal(modal);
             updateUrlParam(modal.getAttribute("data-modal-id"));
-         } else {
+        } else {
             console.error(`Modal with ID "${modalTarget}" not found.`);
         }
     });
