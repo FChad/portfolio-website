@@ -20,6 +20,7 @@ const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-cl
 // Function to open modal
 const openModal = (modal) => {
     modal.classList.add("active");
+    document.body.style.overflow = 'hidden';
 };
 
 // Function to close modal
@@ -27,6 +28,7 @@ const closeModal = () => {
     experienceModals.forEach((modalView) => {
         modalView.classList.remove("active");
     });
+    document.body.style.overflow = 'auto';
 };
 
 // Function to close modal when Escape key is pressed
