@@ -108,30 +108,6 @@ document.getElementById("age").innerText = getAge('1999-08-03');
 
 
 // =======================
-// Project Content Switch
-// =======================
-
-const projectTabs = document.querySelectorAll('.project-description-btn, .project-implementation-btn, .project-software-btn');
-const projectSections = document.querySelectorAll('.project-description, .project-implementation, .project-software');
-
-function showProjectSection(index) {
-    projectSections.forEach(section => section.classList.remove('show'));
-    projectTabs.forEach(tab => tab.classList.remove('active'));
-
-    projectSections[index].classList.add('show');
-    projectTabs[index].classList.add('active');
-}
-
-projectTabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-        showProjectSection(index);
-    });
-});
-
-showProjectSection(0);
-
-
-// =======================
 // Website dark/Light theme
 // =======================
 
