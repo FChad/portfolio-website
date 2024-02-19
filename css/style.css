@@ -754,6 +754,11 @@ header.sticky .nav-bar {
     transition: .3s ease;
 }
 
+.project-img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*====== Hobby section =======*/
 
