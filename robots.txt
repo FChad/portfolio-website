@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.chad.lu/sitemap.xml
