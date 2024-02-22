@@ -1,4 +1,10 @@
 // =======================
+// Dynamic E-Mail Link
+// =======================
+
+document.getElementById("emailLink").innerHTML = '<a href="mailto:' + 'mail' + '@' + 'chad.lu' + '" title="E-Mail an Chad Feierstein senden">' + 'mail@chad.lu' + '</a>';
+
+// =======================
 // Sticky navigation
 // =======================
 
