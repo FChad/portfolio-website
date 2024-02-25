@@ -30,18 +30,19 @@ const checkRenderComplete = () => {
 const renderCardsAndModals = (data, containerId, createCardFunction, createModalFunction) => {
     if (document.getElementById(containerId)) {
         const container = document.getElementById(containerId);
+
+        let html = '';
+
+        data.forEach((item, index) => {
+            const card = createCardFunction(item, index);
+            const modal = createModalFunction(item, index);
+            html += card + modal;
+        });
+    
+        container.innerHTML = html;
     } else {
         return;
     }
-    let html = '';
-
-    data.forEach((item, index) => {
-        const card = createCardFunction(item, index);
-        const modal = createModalFunction(item, index);
-        html += card + modal;
-    });
-
-    container.innerHTML = html;
 };
 
 // Function to create job card
