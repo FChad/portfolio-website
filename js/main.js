@@ -28,7 +28,11 @@ const checkRenderComplete = () => {
 
 // Function to render cards and modals
 const renderCardsAndModals = (data, containerId, createCardFunction, createModalFunction) => {
-    const container = document.getElementById(containerId);
+    if (document.getElementById(containerId)) {
+        const container = document.getElementById(containerId);
+    } else {
+        return;
+    }
     let html = '';
 
     data.forEach((item, index) => {
@@ -252,7 +256,9 @@ window.addEventListener("scroll", function () {
 
 const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10);
 
-document.getElementById("age").innerText = getAge('1999-08-03');
+if (document.getElementById("age")) {
+    document.getElementById("age").innerText = getAge('1999-08-03');
+}
 
 
 // =======================
