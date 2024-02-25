@@ -1,10 +1,147 @@
 // =======================
-// Sticky navigation
+// Job Card and Modal Generator
 // =======================
 
-window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
+// Function to fetch data and render
+const fetchDataAndRender = async (filePath, renderFunction, callback) => {
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error(`Error while loading the JSON file: ${filePath}`);
+        }
+        const data = await response.json();
+        renderFunction(data);
+        if (typeof callback === 'function') {
+            callback();
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+// Function to check if rendering is complete and initialize modals
+const checkRenderComplete = () => {
+    if (jobsRendered && skillsRendered) {
+        initializeModals();
+    }
+};
+
+// Function to render cards and modals
+const renderCardsAndModals = (data, containerId, createCardFunction, createModalFunction) => {
+    const container = document.getElementById(containerId);
+    let html = '';
+
+    data.forEach((item, index) => {
+        const card = createCardFunction(item, index);
+        const modal = createModalFunction(item, index);
+        html += card + modal;
+    });
+
+    container.innerHTML = html;
+};
+
+// Function to create job card
+const createJobCard = (job, index) => {
+    const { company, title, type, duration, date, description, tasks } = job;
+    return `
+        <div class="experience-card">
+            <div class="upper">
+                <h3>${title}</h3>
+                <h5>${type} ${duration ? `| ${duration}` : ''}</h5>
+                <span><i class="fa-regular fa-calendar"></i> ${date}</span>
+            </div>
+            <div class="hr"></div>
+            ${company ? `<h4><label>${company}</label></h4>` : ''}
+            <p>${description}</p>
+            ${tasks && tasks.length > 0 ? `<div class="experience-learn-more-btn" data-modal-target="job${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>` : ''}
+        </div>
+    `;
+};
+
+// Function to create job modal
+const createJobModal = (job, index) => {
+    const { company, title, type, duration, description, tasks } = job;
+    if (!company) return '';
+
+    return `
+        <div class="experience-modal flex-center" data-modal-id="job${index}">
+            <div class="experience-modal-body">
+                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                <h3>${company}</h3>
+                <h4>${title} | ${type} | ${duration}</h4>
+                <div class="hr"></div>
+                <p><b>Beschreibung:</b> ${description}</p>
+                <div class="hr"></div>
+                <h4>Aufgaben</h4>
+                <ul>
+                    ${tasks.map(task => `<li><i class="fas fa-check-circle"></i> ${task}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+};
+
+// Function to create skill card
+const createSkillCard = (skill, index) => {
+    const { icon, title, description } = skill;
+    return `
+        <div class="experience-card">
+            <div class="upper">
+                <h3>${icon} ${title}</h3>
+            </div>
+            <div class="hr"></div>
+            <p>${description}</p>
+            <div class="experience-learn-more-btn" data-modal-target="skill${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>
+        </div>
+    `;
+};
+
+// Function to create skill modal
+const createSkillModal = (skill, index) => {
+    const { icon, title, details } = skill;
+    return `
+        <div class="experience-modal flex-center" data-modal-id="skill${index}">
+            <div class="experience-modal-body">
+                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                <h3>${icon} ${title}</h3>
+                ${Object.entries(details).map(([category, items]) => `
+                <h4>${category}</h4>
+                <div class="hr"></div>
+                <ul>
+                    ${items.map(item => `
+                        <li><i class="fas fa-check-circle"></i> <b>${item.type}:</b> ${item.description}</li>
+                    `).join('')}
+                </ul>
+            `).join('')}
+            </div>
+        </div>
+    `;
+};
+
+// Function to render job cards and modals
+const renderJobCardsAndModals = (jobsData) => {
+    renderCardsAndModals(jobsData.jobs, 'jobs-container', createJobCard, createJobModal);
+};
+
+// Function to render skill cards and modals
+const renderSkillCardsAndModals = (skillsData) => {
+    renderCardsAndModals(skillsData.skills, 'skills-container', createSkillCard, createSkillModal);
+};
+
+// Fetch and render job data
+const jobsDataFilePath = '/api/jobsData.json';
+let jobsRendered = false;
+fetchDataAndRender(jobsDataFilePath, renderJobCardsAndModals, () => {
+    jobsRendered = true;
+    checkRenderComplete();
+});
+
+// Fetch and render skill data
+const skillsDataFilePath = '/api/skillsData.json';
+let skillsRendered = false;
+fetchDataAndRender(skillsDataFilePath, renderSkillCardsAndModals, () => {
+    skillsRendered = true;
+    checkRenderComplete();
 });
 
 
@@ -12,92 +149,101 @@ window.addEventListener("scroll", function () {
 // Experience section Modal
 // =======================
 
-// Selecting modal elements
-const experienceModals = document.querySelectorAll(".experience-modal");
-const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
-const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
+function initializeModals() {
+    // Selecting modal elements
+    const experienceModals = document.querySelectorAll(".experience-modal");
+    const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
+    const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
 
-// Function to open modal
-const openModal = (modal) => {
-    modal.classList.add("active");
-    document.body.style.overflow = 'hidden';
-};
+    // Function to open modal
+    const openModal = (modal) => {
+        modal.classList.add("active");
+        document.body.style.overflow = 'hidden';
+    };
 
-// Function to close modal
-const closeModal = () => {
-    experienceModals.forEach((modalView) => {
-        modalView.classList.remove("active");
-    });
-    document.body.style.overflow = 'auto';
-};
+    // Function to close modal
+    const closeModal = () => {
+        experienceModals.forEach((modalView) => {
+            modalView.classList.remove("active");
+        });
+        document.body.style.overflow = '';
+    };
 
-// Function to close modal when Escape key is pressed
-const closeOnEscape = (event) => {
-    if (event.key === "Escape") {
-        closeModal();
-        updateUrlParam(null);
-    }
-};
-
-// Function to update URL with modal ID
-const updateUrlParam = (modalId) => {
-    const url = new URL(window.location.href);
-    if (modalId) {
-        url.searchParams.set("modal", modalId);
-    } else {
-        url.searchParams.delete("modal");
-    }
-    history.pushState(null, null, url);
-};
-
-// Function to open modal based on URL parameter
-const openModalFromUrl = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const modalId = urlParams.get('modal');
-    if (modalId) {
-        const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
-        if (modal) {
-            openModal(modal);
+    // Function to close modal when Escape key is pressed
+    const closeOnEscape = (event) => {
+        if (event.key === "Escape") {
+            closeModal();
+            updateUrlParam(null);
         }
-    } else {
-        closeModal();
-    }
-};
+    };
 
-// Event listeners for clicking "Learn More" buttons
-experienceLearnMoreBtns.forEach((learnmoreBtn) => {
-    learnmoreBtn.addEventListener("click", () => {
-        const modalTarget = learnmoreBtn.getAttribute("data-modal-target");
-        const modal = document.querySelector(`[data-modal-id="${modalTarget}"]`);
-        if (modal) {
-            openModal(modal);
-            updateUrlParam(modal.getAttribute("data-modal-id"));
+    // Function to update URL with modal ID
+    const updateUrlParam = (modalId) => {
+        const url = new URL(window.location.href);
+        if (modalId) {
+            url.searchParams.set("modal", modalId);
         } else {
-            console.error(`Modal with ID "${modalTarget}" not found.`);
+            url.searchParams.delete("modal");
         }
+        history.pushState(null, null, url);
+    };
+
+    // Function to open modal based on URL parameter
+    const openModalFromUrl = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modalId = urlParams.get('modal');
+        if (modalId) {
+            const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+            if (modal) {
+                openModal(modal);
+            }
+        } else {
+            closeModal();
+        }
+    };
+
+    // Event listeners for clicking "Learn More" buttons
+    experienceLearnMoreBtns.forEach((learnmoreBtn) => {
+        learnmoreBtn.addEventListener("click", () => {
+            const modalTarget = learnmoreBtn.getAttribute("data-modal-target");
+            const modal = document.querySelector(`[data-modal-id="${modalTarget}"]`);
+            if (modal) {
+                openModal(modal);
+                updateUrlParam(modal.getAttribute("data-modal-id"));
+            } else {
+                console.error(`Modal with ID "${modalTarget}" not found.`);
+            }
+        });
     });
-});
 
-// Event listeners for clicking modal close buttons
-experienceModalCloseBtns.forEach((modalCloseBtn) => {
-    modalCloseBtn.addEventListener("click", () => {
-        closeModal();
-        updateUrlParam(null);
+    // Event listeners for clicking modal close buttons
+    experienceModalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () => {
+            closeModal();
+            updateUrlParam(null);
+        });
     });
-});
 
-// Event listener for popstate event (e.g., back button press)
-window.addEventListener("popstate", () => {
+    // Event listener for popstate event (e.g., back button press)
+    window.addEventListener("popstate", () => {
+        openModalFromUrl();
+    });
+
     openModalFromUrl();
-});
 
-// Event listener for DOMContentLoaded event (page load)
-window.addEventListener("DOMContentLoaded", () => {
-    openModalFromUrl();
-});
+    // Event listener for keydown event (e.g., Escape key press)
+    window.addEventListener("keydown", closeOnEscape);
+}
 
-// Event listener for keydown event (e.g., Escape key press)
-window.addEventListener("keydown", closeOnEscape);
+
+// =======================
+// Sticky navigation
+// =======================
+
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    header.classList.toggle("sticky", window.scrollY > 0);
+});
 
 
 // =======================
