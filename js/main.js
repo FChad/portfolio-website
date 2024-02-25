@@ -38,7 +38,7 @@ const renderCardsAndModals = (data, containerId, createCardFunction, createModal
             const modal = createModalFunction(item, index);
             html += card + modal;
         });
-    
+
         container.innerHTML = html;
     } else {
         return;
