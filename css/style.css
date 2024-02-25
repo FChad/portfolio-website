@@ -518,6 +518,7 @@ header.sticky .nav-bar {
 
 .edu-list .item>a>i {
     position: absolute;
+    color: var(--second-color);
     top: 0;
     right: 0;
     margin: 10px;
