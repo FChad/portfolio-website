@@ -485,7 +485,7 @@ header.sticky .nav-bar {
     border-radius: 5px;
 }
 
-.education-all {
+.skills-info:not(:last-child) {
     margin-bottom: 80px;
 }
 

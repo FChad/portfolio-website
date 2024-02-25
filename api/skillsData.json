@@ -242,16 +242,6 @@
                         "type": "SQL",
                         "description": "Structured Query Language (SQL) ist eine spezielle Programmiersprache zur Verwaltung und Abfrage von relationalen Datenbanken. SQL wird für das Abrufen, Aktualisieren, Einfügen und Löschen von Daten verwendet."
                     }
-                ],
-                "Daten-Formate": [
-                    {
-                        "type": "XML",
-                        "description": "Extensible Markup Language (XML) ist eine Auszeichnungssprache zur Darstellung hierarchischer Strukturen in Form von Textdateien. Es wird häufig für den Austausch von Daten zwischen verschiedenen Systemen verwendet."
-                    },
-                    {
-                        "type": "JSON",
-                        "description": "JavaScript Object Notation (JSON) ist ein leicht lesbares Datenformat, das auf JavaScript-Objekten basiert. Es wird häufig für den Datenaustausch zwischen einem Server und einem Webclient verwendet."
-                    }
                 ]
             }
         },
@@ -610,6 +600,20 @@
                     {
                         "type": "Verwaltung von Daten in Excel und Access",
                         "description": "Kenntnisse in der Verwaltung und Analyse von Daten in Excel und Access."
+                    }
+                ],
+                "Daten-Formate": [
+                    {
+                        "type": "XML",
+                        "description": "Extensible Markup Language (XML) ist eine Auszeichnungssprache zur Darstellung hierarchischer Strukturen in Form von Textdateien. Es wird häufig für den Austausch von Daten zwischen verschiedenen Systemen verwendet."
+                    },
+                    {
+                        "type": "JSON",
+                        "description": "JavaScript Object Notation (JSON) ist ein leicht lesbares Datenformat, das auf JavaScript-Objekten basiert. Es wird häufig für den Datenaustausch zwischen einem Server und einem Webclient verwendet."
+                    },
+                    {
+                        "type": "CSV",
+                        "description": "Comma-separated values (CSV) ist ein Dateiformat zur Darstellung tabellarischer Daten. Dabei werden die Datenzeilen durch Zeilenumbrüche getrennt und die einzelnen Felder in einer Zeile durch Kommas oder andere Trennzeichen voneinander abgegrenzt. "
                     }
                 ]
             }
