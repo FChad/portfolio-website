@@ -71,7 +71,10 @@ const createJobModal = (job, index) => {
     return `
         <div class="experience-modal flex-center" data-modal-id="job${index}">
             <div class="experience-modal-body">
-                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                <div class="experience-modal-btns">
+                    <i class="fa-solid fa-square-share-nodes experience-modal-share-btn"></i>
+                    <i class="fa-solid fa-square-xmark experience-modal-close-btn"></i>
+                </div>
                 <h3>${company}</h3>
                 <h4>${title} | ${type} | ${duration}</h4>
                 <div class="hr"></div>
@@ -109,7 +112,10 @@ const createSkillModal = (skill, index) => {
     return `
         <div class="experience-modal flex-center" data-modal-id="skill${index}">
             <div class="experience-modal-body">
-                <i class="fas fa-rectangle-xmark experience-modal-close-btn"></i>
+                <div class="experience-modal-btns">
+                    <i class="fa-solid fa-square-share-nodes experience-modal-share-btn"></i>
+                    <i class="fa-solid fa-square-xmark experience-modal-close-btn"></i>
+                </div>
                 <h3>${icon} ${title}</h3>
                 ${Object.entries(details).map(([category, items]) => `
                 <h4>${category}</h4>
@@ -161,6 +167,7 @@ function initializeModals() {
     const experienceModals = document.querySelectorAll(".experience-modal");
     const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
     const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
+    const experienceModalShareBtn = document.querySelectorAll('.experience-modal-share-btn');
 
     // Function to open modal
     const openModal = (modal) => {
@@ -228,6 +235,25 @@ function initializeModals() {
         modalCloseBtn.addEventListener("click", () => {
             closeModal();
             updateUrlParam(null);
+        });
+    });
+
+    // Event listeners for clicking modal share buttons
+    experienceModalShareBtn.forEach((modalShareBtn) => {
+        modalShareBtn.addEventListener("click", () => {
+            const modalId = modalShareBtn.closest('.experience-modal').getAttribute('data-modal-id');
+            const link = `${window.location.protocol}//${window.location.host}/?modal=${modalId}`;
+
+            // Use the newer navigator.clipboard.writeText() API to copy text to clipboard
+            navigator.clipboard.writeText(link)
+                .then(function() {
+                // Provide feedback to the user that the link has been copied
+                alert("Link kopiert: " + link);
+            })
+            .catch(function(error) {
+                // Handle any errors that may occur during copying
+                console.error('Fehler beim kopieren des Links: ', error);
+            });
         });
     });
 
