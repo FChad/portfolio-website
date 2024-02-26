@@ -47,7 +47,7 @@ const renderCardsAndModals = (data, containerId, createCardFunction, createModal
 
 // Function to create job card
 const createJobCard = (job, index) => {
-    const { company, title, type, duration, date, description, tasks } = job;
+    const { company, title, type, duration, date, description, tasks, createModal } = job;
     return `
         <div class="experience-card">
             <div class="upper">
@@ -58,15 +58,15 @@ const createJobCard = (job, index) => {
             <div class="hr"></div>
             ${company ? `<h4><label>${company}</label></h4>` : ''}
             <p>${description}</p>
-            ${tasks && tasks.length > 0 ? `<div class="experience-learn-more-btn" data-modal-target="job${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>` : ''}
+            ${createModal ? `<div class="experience-learn-more-btn" data-modal-target="job${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>` : ''}
         </div>
     `;
 };
 
 // Function to create job modal
 const createJobModal = (job, index) => {
-    const { company, title, type, duration, description, tasks } = job;
-    if (!company) return '';
+    const { company, title, type, duration, description, tasks, createModal } = job;
+    if (!createModal) return '';
 
     return `
         <div class="experience-modal flex-center" data-modal-id="job${index}">
@@ -88,7 +88,7 @@ const createJobModal = (job, index) => {
 
 // Function to create skill card
 const createSkillCard = (skill, index) => {
-    const { icon, title, description } = skill;
+    const { icon, title, description, createModal } = skill;
     return `
         <div class="experience-card">
             <div class="upper">
@@ -96,14 +96,16 @@ const createSkillCard = (skill, index) => {
             </div>
             <div class="hr"></div>
             <p>${description}</p>
-            <div class="experience-learn-more-btn" data-modal-target="skill${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>
+            ${createModal ? `<div class="experience-learn-more-btn" data-modal-target="skill${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>` : ''}
         </div>
     `;
 };
 
 // Function to create skill modal
 const createSkillModal = (skill, index) => {
-    const { icon, title, details } = skill;
+    const { icon, title, details, createModal } = skill;
+    if (!createModal) return '';
+
     return `
         <div class="experience-modal flex-center" data-modal-id="skill${index}">
             <div class="experience-modal-body">

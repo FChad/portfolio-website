@@ -4,6 +4,7 @@
             "title": "Pubic Cloud Provider",
             "icon": "<i class=\"fa-solid fa-cloud\"></i>",
             "description": "Erfahrungen mit Anbietern von Public Cloud Services.",
+            "createModal": true,
             "details": {
                 "Amazon Web Services": [
                     {
@@ -65,6 +66,7 @@
             "title": "Virtualisierung",
             "icon": "<i class=\"fa-solid fa-box\"></i>",
             "description": "Erfahrungen mit Type 1 & 2 Hypervisoren sowie Container-Technologien.",
+            "createModal": true,
             "details": {
                 "Type 1 Hypervisor": [
                     {
@@ -106,6 +108,7 @@
             "title": "Betriebssysteme",
             "icon": "<i class=\"fa-solid fa-desktop\"></i>",
             "description": "Die Betriebssysteme, mit denen ich bisher Erfahrungen gesammelt habe.",
+            "createModal": true,
             "details": {
                 "Windows": [
                     {
@@ -167,6 +170,7 @@
             "title": "Office-Software",
             "icon": "<i class=\"fa-brands fa-microsoft\"></i>",
             "description": "Ein tiefer Einblick in Microsoft Office und meine umfassende Kenntnis darin.",
+            "createModal": true,
             "details": {
                 "Microsoft Office": [
                     {
@@ -204,6 +208,7 @@
             "title": "Programmierung",
             "icon": "<i class=\"fa-solid fa-file-code\"></i>",
             "description": "Die Bandbreite meiner Fähigkeiten in verschiedenen Programmiersprachen.",
+            "createModal": true,
             "details": {
                 "Script-Sprache": [
                     {
@@ -249,6 +254,7 @@
             "title": "Projektmanagement",
             "icon": "<i class=\"fa-solid fa-list-check\"></i>",
             "description": "Kernkonzepte und wichtige Aspekte, die das Projektmanagement ausmachen.",
+            "createModal": true,
             "details": {
                 "Essentielle Aspekte des Projektmanagements": [
                     {
@@ -304,6 +310,7 @@
             "title": "IT-Netzwerk",
             "icon": "<i class=\"fa-solid fa-network-wired\"></i>",
             "description": "Expertise in Netzwerkplanung, -einrichtung und -wartung für zuverlässige Kommunikation.",
+            "createModal": true,
             "details": {
                 "Cisco Certified Network Associate 1 - CCNA1": [
                     {
@@ -429,6 +436,7 @@
             "title": "IT-Sicherheit",
             "icon": "<i class=\"fa-solid fa-shield-halved\"></i>",
             "description": "Kompetenz in der Absicherung von IT-Netzwerken für geschützte Kommunikation.",
+            "createModal": true,
             "details": {
                 "Verschlüsselungsmethoden": [
                     {
@@ -534,6 +542,7 @@
             "title": "IT-Automatisierung",
             "icon": "<i class=\"fa-solid fa-robot\"></i>",
             "description": "Automatisierung von IT-Prozessen für Effizienz und Skalierbarkeit.",
+            "createModal": true,
             "details": {
                 "Automatisierungstools und Skriptsprachen": [
                     {
@@ -575,6 +584,7 @@
             "title": "Datenbank",
             "icon": "<i class=\"fa-solid fa-database\"></i>",
             "description": "Effiziente Organisation und Sicherung von Datenbanken.",
+            "createModal": true,
             "details": {
                 "Datenbankverwaltung": [
                     {
@@ -622,6 +632,7 @@
             "title": "Andere",
             "icon": "<i class=\"fa-solid fa-bars\"></i>",
             "description": "Ein Blick auf die Vielfalt der Tools und Technologien, mit denen ich vertraut bin.",
+            "createModal": true,
             "details": {
                 "Client": [
                     {

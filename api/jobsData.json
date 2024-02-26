@@ -5,6 +5,7 @@
             "type": "Vollzeit",
             "date": "Jetzt",
             "description": "Ich suche nach spannenden Herausforderungen: Auf der Suche nach neuen beruflichen Möglichkeiten in der Informatikbranche, um wertvolle Erfahrungen zu sammeln und meine Fähigkeiten weiterzuentwickeln.",
+            "createModal": false,
             "tasks": []
         },
         {
@@ -14,6 +15,7 @@
             "date": "2021",
             "company": "QPark Consulting",
             "description": "Ein Praktikum bei QPark Consulting, wo ich drei Monate lang an zwei großen Projekten gearbeitet habe.",
+            "createModal": true,
             "tasks": [
                 "Erstellung eines Plans für ein Projekt mit agilen Methoden",
                 "Erstellung und Konfiguration von virtuellen Maschinen (Google Cloud Platform)",
@@ -29,6 +31,7 @@
             "date": "2020",
             "company": "Lycée Guillaume Kroll",
             "description": "Ein Ferienjob am Lycée Guillaume Kroll, wo ich zwei Monate lang in der IT-Abteilung mitgearbeitet habe.",
+            "createModal": true,
             "tasks": [
                 "Einrichten der von MIXvoip bereitgestellten Telefone",
                 "Verwalten der von MIXvoip bereitgestellten Telefone",
@@ -43,6 +46,7 @@
             "date": "2019",
             "company": "Lycée Guillaume Kroll",
             "description": "Ein Ferienjob am Lycée Guillaume Kroll, wo ich einen Monat lang ein Projekt abgeschlossen habe, das ich während meines Praktikums begonnen hatte.",
+            "createModal": true,
             "tasks": [
                 "Geplante Kundenbesprechungen",
                 "Das Back-End für eine Website programmiert und modifiziert",
@@ -58,6 +62,7 @@
             "date": "2019",
             "company": "Lycée Guillaume Kroll",
             "description": "Während meines Praktikums am Lycée Guillaume Kroll verbrachte ich hauptsächlich sechs Wochen damit, an einem Website-Projekt zu arbeiten.",
+            "createModal": true,
             "tasks": [
                 "Geplante Kundenbesprechungen",
                 "Das Back-End für eine Website programmiert und modifiziert",
@@ -74,6 +79,7 @@
             "date": "2016",
             "company": "STEP",
             "description": "Ein Praktikum bei STEP Syndicat intercommunal in Peppange, wo ich eine Menge über IT Netzwerke gelernt habe.",
+            "createModal": true,
             "tasks": [
                 "Einführung in die zentralen Aspekte der internen Organisationsstruktur",
                 "Die Funktionsweise einer Kläranlage, insbesondere der kontinuierliche Durchlauf-Prozess",
