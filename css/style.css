@@ -706,7 +706,7 @@ header.sticky .nav-bar {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 5px 10px;
+    margin: 2px 10px;
     font-size: 1.75em;
 }
 
@@ -715,10 +715,19 @@ header.sticky .nav-bar {
     color: var(--modal-close-btn-color);
 }
 
+.experience-modal-body .experience-modal-close-btn:hover {
+    transform: scale(1.03);
+}
+
 .experience-modal-body .experience-modal-share-btn {
     cursor: pointer;
     color: var(--second-color);
 }
+
+.experience-modal-body .experience-modal-share-btn:hover {
+    transform: scale(1.03);
+}
+
 
 .experience-modal-body h3 {
     font-size: 2em;
@@ -961,6 +970,10 @@ footer a i {
         visibility: visible;
         font-size: 1.75em;
         color: var(--modal-close-btn-color);
+    }
+
+    .nav-close-btn:hover {
+        transform: scale(1.03);
     }
 
     .nav-menu-btn {

@@ -72,8 +72,8 @@ const createJobModal = (job, index) => {
         <div class="experience-modal flex-center" data-modal-id="job${index}">
             <div class="experience-modal-body">
                 <div class="experience-modal-btns">
-                    <i class="fa-solid fa-square-share-nodes experience-modal-share-btn"></i>
-                    <i class="fa-solid fa-square-xmark experience-modal-close-btn"></i>
+                    <i class="fa-solid fa-square-share-nodes experience-modal-share-btn" title="Link kopieren"></i>
+                    <i class="fa-solid fa-square-xmark experience-modal-close-btn" title="Schließen"></i>
                 </div>
                 <h3>${company}</h3>
                 <h4>${title} | ${type} | ${duration}</h4>
@@ -113,8 +113,8 @@ const createSkillModal = (skill, index) => {
         <div class="experience-modal flex-center" data-modal-id="skill${index}">
             <div class="experience-modal-body">
                 <div class="experience-modal-btns">
-                    <i class="fa-solid fa-square-share-nodes experience-modal-share-btn"></i>
-                    <i class="fa-solid fa-square-xmark experience-modal-close-btn"></i>
+                    <i class="fa-solid fa-square-share-nodes experience-modal-share-btn" title="Link kopieren"></i>
+                    <i class="fa-solid fa-square-xmark experience-modal-close-btn" title="Schließen"></i>
                 </div>
                 <h3>${icon} ${title}</h3>
                 ${Object.entries(details).map(([category, items]) => `
@@ -246,14 +246,14 @@ function initializeModals() {
 
             // Use the newer navigator.clipboard.writeText() API to copy text to clipboard
             navigator.clipboard.writeText(link)
-                .then(function() {
-                // Provide feedback to the user that the link has been copied
-                alert("Link kopiert: " + link);
-            })
-            .catch(function(error) {
-                // Handle any errors that may occur during copying
-                console.error('Fehler beim kopieren des Links: ', error);
-            });
+                .then(function () {
+                    // Provide feedback to the user that the link has been copied
+                    alert("Link kopiert: " + link);
+                })
+                .catch(function (error) {
+                    // Handle any errors that may occur during copying
+                    console.error('Fehler beim kopieren des Links: ', error);
+                });
         });
     });
 
