@@ -707,7 +707,7 @@ header.sticky .nav-bar {
     top: 0;
     right: 0;
     margin: 5px 10px;
-    font-size: 1.5em;
+    font-size: 1.75em;
 }
 
 .experience-modal-body .experience-modal-close-btn {
@@ -959,7 +959,7 @@ footer a i {
         margin: 10px;
         cursor: pointer;
         visibility: visible;
-        font-size: 1.5em;
+        font-size: 1.75em;
         color: var(--modal-close-btn-color);
     }
 
