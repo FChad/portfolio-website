@@ -489,7 +489,7 @@ header.sticky .nav-bar {
     margin-bottom: 80px;
 }
 
-.education .item-show-more-btn {
+.education .item-show-more-btn, .education .item-show-less-btn {
     color: var(--third-color);
     padding-top: 0.4em;
     margin-top: 0.4em;
@@ -498,12 +498,20 @@ header.sticky .nav-bar {
     text-align: center;
 }
 
-.education .item-show-more-btn i {
+.education .item-show-more-btn i, .education .item-show-less-btn i {
     transition: .3s ease;
 }
 
 .education .item-show-more-btn:hover i {
-    transform: translateY(10px);
+    transform: translateY(5px);
+}
+
+.education .item-show-less-btn {
+    display: none;
+}
+
+.education .item-show-less-btn:hover i {
+    transform: translateY(-5px);
 }
 
 .edu-list .item {

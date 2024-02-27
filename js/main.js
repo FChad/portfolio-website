@@ -78,12 +78,10 @@ const createSkillCard = (skill, index) => {
             </li>
             `).join('')}
         </ul>
-        ${educations.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div>' : ''}
+        ${educations.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
-    }
-
-    if(languages) {
+    } else if(languages) {
         return `<div class="education">
         <h4><label>${icon} ${title}</label></h4>
         <ul class="bars">
@@ -98,12 +96,10 @@ const createSkillCard = (skill, index) => {
             </li>
             `).join('')}
         </ul>
-        ${languages.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div>' : ''}
+        ${languages.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
-    }
-
-    if(certifications) {
+    } else if(certifications) {
         return `<div class="education">
         <h4><label>${icon} ${title}</label></h4>
         <ul class="edu-list">
@@ -122,7 +118,7 @@ const createSkillCard = (skill, index) => {
             </li>
             `).join('')}
         </ul>
-        ${certifications.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div>' : ''}
+        ${certifications.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
     }
@@ -216,7 +212,7 @@ const createOtherSkillModal = (otherSkill, index) => {
 
 
 
-// Function to render otherSkill cards and modals
+// Function to render skill cards and modals
 const renderSkillCardsAndModals = (skillsData) => {
     renderCardsAndModals(skillsData.skills, 'skills-container', createSkillCard, null);
 };
@@ -233,7 +229,7 @@ const renderOtherSkillCardsAndModals = (otherSkillsData) => {
 
 
 
-// Fetch and render otherSkillData
+// Fetch and render skillsData
 const skillsDataFilePath = '/api/skillsData.json';
 let skillsRendered = false;
 fetchDataAndRender(skillsDataFilePath, renderSkillCardsAndModals, () => {
@@ -242,7 +238,7 @@ fetchDataAndRender(skillsDataFilePath, renderSkillCardsAndModals, () => {
 });
 
 
-// Fetch and render jobData
+// Fetch and render jobsData
 const jobsDataFilePath = '/api/jobsData.json';
 let jobsRendered = false;
 fetchDataAndRender(jobsDataFilePath, renderJobCardsAndModals, () => {
@@ -250,7 +246,7 @@ fetchDataAndRender(jobsDataFilePath, renderJobCardsAndModals, () => {
     checkRenderComplete();
 });
 
-// Fetch and render otherSkillData
+// Fetch and render otherSkillsData
 const otherSkillsDataFilePath = '/api/otherSkillsData.json';
 let otherSkillsRendered = false;
 fetchDataAndRender(otherSkillsDataFilePath, renderOtherSkillCardsAndModals, () => {
@@ -265,19 +261,45 @@ fetchDataAndRender(otherSkillsDataFilePath, renderOtherSkillCardsAndModals, () =
 
 function initializeItemShowMoreBtns() {
     const itemShowMoreBtns = document.querySelectorAll(".item-show-more-btn");
+    const itemShowLessBtns = document.querySelectorAll(".item-show-less-btn");
     
     itemShowMoreBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const parent = this.closest('.education');
 
+            const itemShowLessBtn = parent.querySelector('.item-show-less-btn');
+            itemShowLessBtn.style.display = 'block';
+
             const hideItems = parent.querySelectorAll('.edu-list .item.hide');
             hideItems.forEach(item => {
-                item.classList.remove('hide');
+                item.style.display = 'block';
             });
 
             const hideBars = parent.querySelectorAll('.bars .bar.hide');
             hideBars.forEach(bar => {
                 bar.style.display = 'block'; // Set display to 'block' to show the bars
+            });
+
+            
+            this.style.display = 'none';
+        });
+    });
+
+    itemShowLessBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const parent = this.closest('.education');
+
+            const itemShowMoreBtn = parent.querySelector('.item-show-more-btn');
+            itemShowMoreBtn.style.display = 'block';
+
+            const hideItems = parent.querySelectorAll('.edu-list .item.hide');
+            hideItems.forEach(item => {
+                item.style.display = 'none';
+            });
+
+            const hideBars = parent.querySelectorAll('.bars .bar.hide');
+            hideBars.forEach(bar => {
+                bar.style.display = 'none'; // Set display to 'block' to show the bars
             });
 
             
