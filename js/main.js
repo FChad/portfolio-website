@@ -390,6 +390,24 @@ function initializeModals() {
 
     // Event listener for keydown event (e.g., Escape key press)
     window.addEventListener("keydown", closeOnEscape);
+
+    initializeScrollLocations();
+}
+
+function initializeScrollLocations() {
+    if(window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        var targetElement = document.getElementById(hash);
+
+        if(targetElement) {
+            var targetOffset = targetElement.getBoundingClientRect().top;
+
+            window.scrollTo({
+                top: window.pageYOffset + targetOffset,
+                behavior: 'smooth'
+            });
+        }
+    }
 }
 
 
