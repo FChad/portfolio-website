@@ -1,5 +1,5 @@
 // =======================
-// Job Card and Modal Generator
+// Card and Modal Generator
 // =======================
 
 // Function to fetch data and render
@@ -21,7 +21,7 @@ const fetchDataAndRender = async (filePath, renderFunction, callback) => {
 
 // Function to check if rendering is complete and initialize modals
 const checkRenderComplete = () => {
-    if (jobsRendered && skillsRendered) {
+    if (jobsRendered && otherSkillsRendered) {
         initializeModals();
     }
 };
@@ -34,14 +34,97 @@ const renderCardsAndModals = (data, containerId, createCardFunction, createModal
         let html = '';
 
         data.forEach((item, index) => {
-            const card = createCardFunction(item, index);
-            const modal = createModalFunction(item, index);
-            html += card + modal;
+            if (createCardFunction) {
+                const card = createCardFunction(item, index);
+                html += card;
+            }
+            
+            if (createModalFunction) {
+                const modal = createModalFunction(item, index);
+                html += modal;
+            }
         });
 
         container.innerHTML = html;
     } else {
         return;
+    }
+};
+
+
+
+// Function to create SkillCard
+const createSkillCard = (skill, index) => {
+    const { title, icon, educations, languages, certifications } = skill;
+    const maxToShow = 4;
+    
+    if(educations) {
+        return `<div class="education">
+        <h4><label>${icon} ${title}</label></h4>
+        <ul class="edu-list">
+            ${educations.map((education, index) => `
+            <li class="item ${index >= maxToShow ? 'hide' : ''}">
+                <span class="year"><i class="fa-regular fa-calendar"></i> ${education.year}</span>
+                ${education.link ? `<a href="${education.link}" target="_blank" rel="noreferrer" title="${education.qualification} im ${education.institution}">
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </a>` : ''}
+                <p>
+                    <span>${education.qualification}</span>
+                    ${education.specialization ? `<br>Fachrichtung: ${education.specialization}` : ''}
+                    ${education.details ? `<br>${education.details}` : ''}
+                    ${education.institution ? `<br>im ${education.institution}` : ''}
+                    ${education.location ? `in ${education.location}` : ''}
+                </p>
+            </li>
+            `).join('')}
+        </ul>
+        ${educations.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div>' : ''}
+        </div>
+    `;
+    }
+
+    if(languages) {
+        return `<div class="education">
+        <h4><label>${icon} ${title}</label></h4>
+        <ul class="bars">
+            ${languages.map((language, index) => `
+            <li class="bar ${index >= maxToShow ? 'hide' : ''}">
+                <div class="info">
+                    <img src="${language.flag}" alt="${language.description}">
+                    <span>${language.name}</span>
+                    <span>${language.level}</span>
+                </div>
+                <div class="line p-${language.line}"></div>
+            </li>
+            `).join('')}
+        </ul>
+        ${languages.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div>' : ''}
+        </div>
+    `;
+    }
+
+    if(certifications) {
+        return `<div class="education">
+        <h4><label>${icon} ${title}</label></h4>
+        <ul class="edu-list">
+            ${certifications.map((certification, index) => `
+            <li class="item ${index >= maxToShow ? 'hide' : ''}">
+                <span class="year"><i class="fa-regular fa-calendar"></i> ${certification.year}</span>
+                <a href="${certification.link}" target="_blank" rel="noreferrer" title="${certification.name}">
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+                <p>
+                    <span>
+                        <i class="fa-solid fa-file-circle-check"></i> ${certification.name}
+                    </span>
+                    <br>${certification.description}
+                </p>
+            </li>
+            `).join('')}
+        </ul>
+        ${certifications.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div>' : ''}
+        </div>
+    `;
     }
 };
 
@@ -89,9 +172,9 @@ const createJobModal = (job, index) => {
     `;
 };
 
-// Function to create skill card
-const createSkillCard = (skill, index) => {
-    const { icon, title, description, createModal } = skill;
+// Function to create otherSkillCard
+const createOtherSkillCard = (otherSkill, index) => {
+    const { icon, title, description, createModal } = otherSkill;
     return `
         <div class="experience-card">
             <div class="upper">
@@ -99,18 +182,18 @@ const createSkillCard = (skill, index) => {
             </div>
             <div class="hr"></div>
             <p>${description}</p>
-            ${createModal ? `<div class="experience-learn-more-btn" data-modal-target="skill${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>` : ''}
+            ${createModal ? `<div class="experience-learn-more-btn" data-modal-target="otherSkill${index}">Mehr erfahren <i class="fas fa-long-arrow-alt-right"></i></div>` : ''}
         </div>
     `;
 };
 
 // Function to create skill modal
-const createSkillModal = (skill, index) => {
-    const { icon, title, details, createModal } = skill;
+const createOtherSkillModal = (otherSkill, index) => {
+    const { icon, title, details, createModal } = otherSkill;
     if (!createModal) return '';
 
     return `
-        <div class="experience-modal flex-center" data-modal-id="skill${index}">
+        <div class="experience-modal flex-center" data-modal-id="otherSkill${index}">
             <div class="experience-modal-body">
                 <div class="experience-modal-btns">
                     <i class="fa-solid fa-square-share-nodes experience-modal-share-btn" title="Link kopieren"></i>
@@ -131,17 +214,35 @@ const createSkillModal = (skill, index) => {
     `;
 };
 
+
+
+// Function to render otherSkill cards and modals
+const renderSkillCardsAndModals = (skillsData) => {
+    renderCardsAndModals(skillsData.skills, 'skills-container', createSkillCard, null);
+};
+
 // Function to render job cards and modals
 const renderJobCardsAndModals = (jobsData) => {
     renderCardsAndModals(jobsData.jobs, 'jobs-container', createJobCard, createJobModal);
 };
 
-// Function to render skill cards and modals
-const renderSkillCardsAndModals = (skillsData) => {
-    renderCardsAndModals(skillsData.skills, 'skills-container', createSkillCard, createSkillModal);
+// Function to render otherSkill cards and modals
+const renderOtherSkillCardsAndModals = (otherSkillsData) => {
+    renderCardsAndModals(otherSkillsData.otherSkills, 'other-skills-container', createOtherSkillCard, createOtherSkillModal);
 };
 
-// Fetch and render job data
+
+
+// Fetch and render otherSkillData
+const skillsDataFilePath = '/api/skillsData.json';
+let skillsRendered = false;
+fetchDataAndRender(skillsDataFilePath, renderSkillCardsAndModals, () => {
+    skillsRendered = true;
+    initializeItemShowMoreBtns();
+});
+
+
+// Fetch and render jobData
 const jobsDataFilePath = '/api/jobsData.json';
 let jobsRendered = false;
 fetchDataAndRender(jobsDataFilePath, renderJobCardsAndModals, () => {
@@ -149,11 +250,11 @@ fetchDataAndRender(jobsDataFilePath, renderJobCardsAndModals, () => {
     checkRenderComplete();
 });
 
-// Fetch and render skill data
-const skillsDataFilePath = '/api/skillsData.json';
-let skillsRendered = false;
-fetchDataAndRender(skillsDataFilePath, renderSkillCardsAndModals, () => {
-    skillsRendered = true;
+// Fetch and render otherSkillData
+const otherSkillsDataFilePath = '/api/otherSkillsData.json';
+let otherSkillsRendered = false;
+fetchDataAndRender(otherSkillsDataFilePath, renderOtherSkillCardsAndModals, () => {
+    otherSkillsRendered = true;
     checkRenderComplete();
 });
 
@@ -161,6 +262,29 @@ fetchDataAndRender(skillsDataFilePath, renderSkillCardsAndModals, () => {
 // =======================
 // Experience section Modal
 // =======================
+
+function initializeItemShowMoreBtns() {
+    const itemShowMoreBtns = document.querySelectorAll(".item-show-more-btn");
+    
+    itemShowMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const parent = this.closest('.education');
+
+            const hideItems = parent.querySelectorAll('.edu-list .item.hide');
+            hideItems.forEach(item => {
+                item.classList.remove('hide');
+            });
+
+            const hideBars = parent.querySelectorAll('.bars .bar.hide');
+            hideBars.forEach(bar => {
+                bar.style.display = 'block'; // Set display to 'block' to show the bars
+            });
+
+            
+            this.style.display = 'none';
+        });
+    });
+}
 
 function initializeModals() {
     // Selecting modal elements

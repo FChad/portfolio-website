@@ -489,6 +489,23 @@ header.sticky .nav-bar {
     margin-bottom: 80px;
 }
 
+.education .item-show-more-btn {
+    color: var(--third-color);
+    padding-top: 0.4em;
+    margin-top: 0.4em;
+    cursor: pointer;
+    transition: .3s ease;
+    text-align: center;
+}
+
+.education .item-show-more-btn i {
+    transition: .3s ease;
+}
+
+.education .item-show-more-btn:hover i {
+    transform: translateY(10px);
+}
+
 .edu-list .item {
     background: var(--card-bg-color);
     box-shadow: var(--box-shadow);
@@ -498,6 +515,14 @@ header.sticky .nav-bar {
     border-radius: 6px;
     transition: .3s ease;
     position: relative;
+}
+
+.edu-list .item.hide{
+    display: none;
+}
+
+.bars .bar.hide{
+    display: none;
 }
 
 .edu-list .item .year {
@@ -1061,16 +1086,6 @@ footer a i {
 
     .media-icons {
         margin-bottom: 80px;
-    }
-
-    /*======Project section=======*/
-
-    .project-content {
-        flex-direction: column;
-    }
-
-    .project-btns {
-        flex-direction: column;
     }
 
 
