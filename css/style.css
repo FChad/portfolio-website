@@ -784,6 +784,7 @@ header.sticky .nav-bar {
 /*===Project section=== ====*/
 .project-cover {
     min-width: 250px;
+    text-align: center;
 }
 
 .project-card-cover img {
@@ -797,6 +798,7 @@ header.sticky .nav-bar {
 
 .project-cover img {
     width: 100%;
+    max-width: 500px;
     border-radius: 6px;
     object-fit: cover;
     box-shadow: var(--box-shadow);
@@ -804,8 +806,17 @@ header.sticky .nav-bar {
 }
 
 .project-img {
-    max-width: 100%;
-    height: auto;
+    min-width: 250px;
+    text-align: center;
+}
+
+.project-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: var(--box-shadow);
+    transition: .3s ease;
 }
 
 
