@@ -58,11 +58,6 @@
 
     /*=======Color Filter=======*/
     --color-filter: invert(0);
-
-    /*=======Scroll bar colors=======*/
-    --scroll-bar-color: #c1ceff;
-    --scroll-thumb-color: #282f4e;
-    --scroll-thumb-hover-color: #454f6b;
 }
 
 * {
