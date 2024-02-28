@@ -1095,7 +1095,7 @@ footer a i {
     }
 
     .home-container .home-img img {
-        max-height: 320px;
+        width: 50%;
         transform: translate(100px, -220px);
     }
 
