@@ -38,7 +38,7 @@ const renderCardsAndModals = (data, containerId, createCardFunction, createModal
                 const card = createCardFunction(item, index);
                 html += card;
             }
-            
+
             if (createModalFunction) {
                 const modal = createModalFunction(item, index);
                 html += modal;
@@ -57,8 +57,8 @@ const renderCardsAndModals = (data, containerId, createCardFunction, createModal
 const createSkillCard = (skill, index) => {
     const { title, icon, educations, languages, certifications } = skill;
     const maxToShow = 4;
-    
-    if(educations) {
+
+    if (educations) {
         return `<div class="education">
         <h4><label>${icon} ${title}</label></h4>
         <ul class="edu-list">
@@ -81,7 +81,7 @@ const createSkillCard = (skill, index) => {
         ${educations.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
-    } else if(languages) {
+    } else if (languages) {
         return `<div class="education">
         <h4><label>${icon} ${title}</label></h4>
         <ul class="bars">
@@ -99,7 +99,7 @@ const createSkillCard = (skill, index) => {
         ${languages.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
-    } else if(certifications) {
+    } else if (certifications) {
         return `<div class="education">
         <h4><label>${icon} ${title}</label></h4>
         <ul class="edu-list">
@@ -262,9 +262,9 @@ fetchDataAndRender(otherSkillsDataFilePath, renderOtherSkillCardsAndModals, () =
 function initializeItemShowMoreBtns() {
     const itemShowMoreBtns = document.querySelectorAll(".item-show-more-btn");
     const itemShowLessBtns = document.querySelectorAll(".item-show-less-btn");
-    
+
     itemShowMoreBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const parent = this.closest('.education');
 
             const itemShowLessBtn = parent.querySelector('.item-show-less-btn');
@@ -277,16 +277,16 @@ function initializeItemShowMoreBtns() {
 
             const hideBars = parent.querySelectorAll('.bars .bar.hide');
             hideBars.forEach(bar => {
-                bar.style.display = 'block'; // Set display to 'block' to show the bars
+                bar.style.display = 'block';
             });
 
-            
+
             this.style.display = 'none';
         });
     });
 
     itemShowLessBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const parent = this.closest('.education');
 
             const itemShowMoreBtn = parent.querySelector('.item-show-more-btn');
@@ -299,10 +299,10 @@ function initializeItemShowMoreBtns() {
 
             const hideBars = parent.querySelectorAll('.bars .bar.hide');
             hideBars.forEach(bar => {
-                bar.style.display = 'none'; // Set display to 'block' to show the bars
+                bar.style.display = 'none';
             });
 
-            
+
             this.style.display = 'none';
         });
     });
@@ -417,11 +417,11 @@ function initializeModals() {
 }
 
 function initializeScrollLocations() {
-    if(window.location.hash) {
+    if (window.location.hash) {
         var hash = window.location.hash.substring(1);
         var targetElement = document.getElementById(hash);
 
-        if(targetElement) {
+        if (targetElement) {
             var targetOffset = targetElement.getBoundingClientRect().top;
 
             window.scrollTo({
