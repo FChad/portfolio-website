@@ -677,6 +677,12 @@
                         "type": "SSH Server",
                         "description": "Ein Server, der Secure Shell (SSH) unterstützt, um Benutzern eine sichere Remote-Verbindung zu ermöglichen und Befehle auszuführen."
                     }
+                ],
+                "Other": [
+                    {
+                        "type": "Wordpress (CMS)",
+                        "description": "Eine benutzerfreundliche Plattform zur Erstellung und Verwaltung von Websites und Blogs mit zahlreichen Anpassungsmöglichkeiten durch Themes und Plugins."
+                    }
                 ]
             }
         }
