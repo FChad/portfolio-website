@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src 'self'; font-src 'self'; style-src 'self';
+  Content-Security-Policy: default-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline';
