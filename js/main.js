@@ -924,7 +924,6 @@ const checkRenderComplete = () => {
     if (Object.values(renderFlags).every(flag => flag)) {
         initializeItemShowMoreBtns();
         initializeModals();
-        initializeScrollLocations();
     }
 };
 
@@ -976,7 +975,7 @@ const createSkillCard = (skill) => {
             </li>
             `).join('')}
         </ul>
-        ${educations.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
+        ${educations.length > maxToShow ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
     } else if (languages) {
@@ -994,7 +993,7 @@ const createSkillCard = (skill) => {
             </li>
             `).join('')}
         </ul>
-        ${languages.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
+        ${languages.length > maxToShow ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
     } else if (certifications) {
@@ -1016,7 +1015,7 @@ const createSkillCard = (skill) => {
             </li>
             `).join('')}
         </ul>
-        ${certifications.length > 4 ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
+        ${certifications.length > maxToShow ? '<div class="item-show-more-btn">Mehr anzeigen<br><i class="fas fa-long-arrow-alt-down"></i></div> <div class="item-show-less-btn"><i class="fas fa-long-arrow-alt-up"></i><br>Weniger anzeigen</div>' : ''}
         </div>
     `;
     }
@@ -1268,19 +1267,6 @@ function initializeModals() {
 
     // Event listener for keydown event (e.g., Escape key press)
     window.addEventListener("keydown", closeOnEscape);
-}
-
-function initializeScrollLocations() {
-    if (window.location.hash) {
-        var hash = window.location.hash.substring(1);
-        var targetElement = document.getElementById(hash);
-
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    }
 }
 
 
