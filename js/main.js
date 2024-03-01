@@ -922,13 +922,8 @@ const fetchDataAndRender = async (name, renderFunction, callback) => {
 // Function to check if rendering is complete and initialize modals
 const checkRenderComplete = () => {
     if (Object.values(renderFlags).every(flag => flag)) {
-        initializeItemShowMoreBtns().then(() => {
-            return initializeModals();
-        }).then(() => {
-            return initializeScrollLocations();
-        }).catch((error) => {
-            console.error('Initialization error:', error);
-        });
+        initializeItemShowMoreBtns();
+        initializeModals();
     }
 };
 
@@ -1141,162 +1136,155 @@ fetchDataAndRender(otherSkillsData, renderOtherSkillCardsAndModals, checkRenderC
 // =======================
 
 function initializeItemShowMoreBtns() {
-    return new Promise((resolve, reject) => {
-        document.addEventListener('click', function (event) {
-            const target = event.target;
+    document.addEventListener('click', function (event) {
+        const target = event.target;
 
-            if (target.classList.contains('item-show-more-btn')) {
-                const parent = target.closest('.education');
+        if (target.classList.contains('item-show-more-btn')) {
+            const parent = target.closest('.education');
 
-                parent.querySelector('.item-show-less-btn').style.display = 'block';
+            parent.querySelector('.item-show-less-btn').style.display = 'block';
 
-                parent.querySelectorAll('.edu-list .item.hide, .edu-list .bar.hide').forEach(item => {
-                    item.style.display = 'block';
-                });
+            parent.querySelectorAll('.edu-list .item.hide, .edu-list .bar.hide').forEach(item => {
+                item.style.display = 'block';
+            });
 
-                target.style.display = 'none';
-            } else if (target.classList.contains('item-show-less-btn')) {
-                const parent = target.closest('.education');
+            target.style.display = 'none';
+        } else if (target.classList.contains('item-show-less-btn')) {
+            const parent = target.closest('.education');
 
-                parent.querySelector('.item-show-more-btn').style.display = 'block';
+            parent.querySelector('.item-show-more-btn').style.display = 'block';
 
-                parent.querySelectorAll('.edu-list .item.hide, .edu-list .bar.hide').forEach(item => {
-                    item.style.display = 'none';
-                });
+            parent.querySelectorAll('.edu-list .item.hide, .edu-list .bar.hide').forEach(item => {
+                item.style.display = 'none';
+            });
 
-                target.style.display = 'none';
-            }
-        });
-        resolve();
+            target.style.display = 'none';
+        }
     });
 }
 
 function initializeModals() {
-    return new Promise((resolve, reject) => {
-        // Selecting modal elements
-        const experienceModals = document.querySelectorAll(".experience-modal");
-        const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
-        const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
-        const experienceModalShareBtn = document.querySelectorAll('.experience-modal-share-btn');
+    // Selecting modal elements
+    const experienceModals = document.querySelectorAll(".experience-modal");
+    const experienceLearnMoreBtns = document.querySelectorAll(".experience-learn-more-btn");
+    const experienceModalCloseBtns = document.querySelectorAll(".experience-modal-close-btn");
+    const experienceModalShareBtn = document.querySelectorAll('.experience-modal-share-btn');
 
-        // Function to open modal
-        const openModal = (modal) => {
-            modal.classList.add("active");
-            document.body.style.overflow = 'hidden';
-        };
+    // Function to open modal
+    const openModal = (modal) => {
+        modal.classList.add("active");
+        document.body.style.overflow = 'hidden';
+    };
 
-        // Function to close modal
-        const closeModal = () => {
-            experienceModals.forEach((modalView) => {
-                modalView.classList.remove("active");
-            });
-            document.body.style.overflow = '';
-        };
+    // Function to close modal
+    const closeModal = () => {
+        experienceModals.forEach((modalView) => {
+            modalView.classList.remove("active");
+        });
+        document.body.style.overflow = '';
+    };
 
-        // Function to close modal when Escape key is pressed
-        const closeOnEscape = (event) => {
-            if (event.key === "Escape") {
-                closeModal();
-                updateUrlParam(null);
+    // Function to close modal when Escape key is pressed
+    const closeOnEscape = (event) => {
+        if (event.key === "Escape") {
+            closeModal();
+            updateUrlParam(null);
+        }
+    };
+
+    // Function to update URL with modal ID
+    const updateUrlParam = (modalId) => {
+        const url = new URL(window.location.href);
+        if (modalId) {
+            url.searchParams.set("modal", modalId);
+        } else {
+            url.searchParams.delete("modal");
+        }
+        history.pushState(null, null, url);
+    };
+
+    // Function to open modal based on URL parameter
+    const openModalFromUrl = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modalId = urlParams.get('modal');
+        if (modalId) {
+            const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+            if (modal) {
+                openModal(modal);
             }
-        };
+        } else {
+            closeModal();
+        }
+    };
 
-        // Function to update URL with modal ID
-        const updateUrlParam = (modalId) => {
-            const url = new URL(window.location.href);
-            if (modalId) {
-                url.searchParams.set("modal", modalId);
+    // Event listeners for clicking "Learn More" buttons
+    experienceLearnMoreBtns.forEach((learnmoreBtn) => {
+        learnmoreBtn.addEventListener("click", () => {
+            const modalTarget = learnmoreBtn.getAttribute("data-modal-target");
+            const modal = document.querySelector(`[data-modal-id="${modalTarget}"]`);
+            if (modal) {
+                openModal(modal);
+                updateUrlParam(modal.getAttribute("data-modal-id"));
             } else {
-                url.searchParams.delete("modal");
+                console.error(`Modal with ID "${modalTarget}" not found.`);
             }
-            history.pushState(null, null, url);
-        };
-
-        // Function to open modal based on URL parameter
-        const openModalFromUrl = () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const modalId = urlParams.get('modal');
-            if (modalId) {
-                const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
-                if (modal) {
-                    openModal(modal);
-                }
-            } else {
-                closeModal();
-            }
-        };
-
-        // Event listeners for clicking "Learn More" buttons
-        experienceLearnMoreBtns.forEach((learnmoreBtn) => {
-            learnmoreBtn.addEventListener("click", () => {
-                const modalTarget = learnmoreBtn.getAttribute("data-modal-target");
-                const modal = document.querySelector(`[data-modal-id="${modalTarget}"]`);
-                if (modal) {
-                    openModal(modal);
-                    updateUrlParam(modal.getAttribute("data-modal-id"));
-                } else {
-                    console.error(`Modal with ID "${modalTarget}" not found.`);
-                }
-            });
         });
-
-        // Event listeners for clicking modal close buttons
-        experienceModalCloseBtns.forEach((modalCloseBtn) => {
-            modalCloseBtn.addEventListener("click", () => {
-                closeModal();
-                updateUrlParam(null);
-            });
-        });
-
-        // Event listeners for clicking modal share buttons
-        experienceModalShareBtn.forEach((modalShareBtn) => {
-            modalShareBtn.addEventListener("click", () => {
-                const modalId = modalShareBtn.closest('.experience-modal').getAttribute('data-modal-id');
-                const link = `${window.location.protocol}//${window.location.host}/?modal=${modalId}`;
-
-                // Use the newer navigator.clipboard.writeText() API to copy text to clipboard
-                navigator.clipboard.writeText(link)
-                    .then(function () {
-                        // Provide feedback to the user that the link has been copied
-                        alert("Link kopiert: " + link);
-                    })
-                    .catch(function (error) {
-                        // Handle any errors that may occur during copying
-                        console.error('Fehler beim kopieren des Links: ', error);
-                    });
-            });
-        });
-
-        // Event listener for popstate event (e.g., back button press)
-        window.addEventListener("popstate", () => {
-            openModalFromUrl();
-        });
-
-        openModalFromUrl();
-
-        // Event listener for keydown event (e.g., Escape key press)
-        window.addEventListener("keydown", closeOnEscape);
-        resolve();
     });
+
+    // Event listeners for clicking modal close buttons
+    experienceModalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () => {
+            closeModal();
+            updateUrlParam(null);
+        });
+    });
+
+    // Event listeners for clicking modal share buttons
+    experienceModalShareBtn.forEach((modalShareBtn) => {
+        modalShareBtn.addEventListener("click", () => {
+            const modalId = modalShareBtn.closest('.experience-modal').getAttribute('data-modal-id');
+            const link = `${window.location.protocol}//${window.location.host}/?modal=${modalId}`;
+
+            // Use the newer navigator.clipboard.writeText() API to copy text to clipboard
+            navigator.clipboard.writeText(link)
+                .then(function () {
+                    // Provide feedback to the user that the link has been copied
+                    alert("Link kopiert: " + link);
+                })
+                .catch(function (error) {
+                    // Handle any errors that may occur during copying
+                    console.error('Fehler beim kopieren des Links: ', error);
+                });
+        });
+    });
+
+    // Event listener for popstate event (e.g., back button press)
+    window.addEventListener("popstate", () => {
+        openModalFromUrl();
+    });
+
+    openModalFromUrl();
+
+    // Event listener for keydown event (e.g., Escape key press)
+    window.addEventListener("keydown", closeOnEscape);
+
+    initializeScrollLocations();
 }
 
 function initializeScrollLocations() {
-    return new Promise((resolve, reject) => {
-        if (window.location.hash) {
-            var hash = window.location.hash.substring(1);
-            var targetElement = document.getElementById(hash);
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        var targetElement = document.getElementById(hash);
 
-            if (targetElement) {
-                var targetOffset = targetElement.getBoundingClientRect().top;
+        if (targetElement) {
+            var targetOffset = targetElement.getBoundingClientRect().top;
 
-                window.scrollTo({
-                    top: window.pageYOffset + targetOffset,
-                    behavior: 'smooth'
-                });
-            }
+            window.scrollTo({
+                top: window.pageYOffset + targetOffset,
+                behavior: 'smooth'
+            });
         }
-        resolve();
-    });
+    }
 }
 
 
