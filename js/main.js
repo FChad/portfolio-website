@@ -896,23 +896,8 @@ var jsonData = {
 // Function to fetch data and render
 const fetchDataAndRender = async (name, renderFunction, callback) => {
     try {
-        let data;
-
-        if (typeof jsonData !== 'undefined') {
-            data = jsonData[name];
-        }
-        // Old .json import
-        // 
-        // else 
-        // {
-        //     const filePath = "/api/" + name + "Data.json"
-        //     const response = await fetch(filePath);
-        //     if (!response.ok) {
-        //         throw new Error(`Error while loading the JSON file: ${filePath}`);
-        //     }
-        //     data = await response.json();
-        //     data = data[name];
-        // }
+        let data = jsonData[name];
+        
         renderFunction(data);
         if (typeof callback === 'function') {
             callback();
