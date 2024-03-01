@@ -524,7 +524,7 @@ header.sticky .nav-bar {
     display: none;
 }
 
-.bars .bar.hide{
+.edu-list .bar.hide{
     display: none;
 }
 
@@ -597,28 +597,8 @@ header.sticky .nav-bar {
     border-radius: 2px;
 }
 
-.bar .p-100:before {
-    width: 100%;
-}
-
-.bar .p-90:before {
-    width: 90%;
-}
-
-.bar .p-80:before {
-    width: 80%;
-}
-
-.bar .p-70:before {
-    width: 70%;
-}
-
-.bar .p-60:before {
-    width: 60%;
-}
-
-.bar .p-50:before {
-    width: 50%;
+.bar .line:before {
+    width: var(--percentage, 0%);
 }
 
 

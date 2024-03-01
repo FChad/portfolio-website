@@ -893,12 +893,24 @@ var jsonData = {
 // Card and Modal Generator
 // =======================
 
+const skillsData = 'skills';
+const jobsData = 'jobs';
+const otherSkillsData = 'otherSkills';
+
+const renderFlags = {
+    skills: false,
+    jobs: false,
+    otherSkills: false
+};
+
 // Function to fetch data and render
 const fetchDataAndRender = async (name, renderFunction, callback) => {
     try {
         let data = jsonData[name];
-        
+
         renderFunction(data);
+        renderFlags[name] = true;
+
         if (typeof callback === 'function') {
             callback();
         }
@@ -909,40 +921,38 @@ const fetchDataAndRender = async (name, renderFunction, callback) => {
 
 // Function to check if rendering is complete and initialize modals
 const checkRenderComplete = () => {
-    if (jobsRendered && otherSkillsRendered) {
+    if (Object.values(renderFlags).every(flag => flag)) {
         initializeModals();
+        initializeItemShowMoreBtns();
+        initializeScrollLocations();
     }
 };
 
 // Function to render cards and modals
 const renderCardsAndModals = (data, containerId, createCardFunction, createModalFunction) => {
-    if (document.getElementById(containerId)) {
-        const container = document.getElementById(containerId);
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-        let html = '';
+    let html = '';
 
-        data.forEach((item, index) => {
-            if (createCardFunction) {
-                const card = createCardFunction(item, index);
-                html += card;
-            }
+    data.forEach((item, index) => {
+        if (createCardFunction) {
+            const card = createCardFunction(item, index);
+            html += card;
+        }
+        if (createModalFunction) {
+            const modal = createModalFunction(item, index);
+            html += modal;
+        }
+    });
 
-            if (createModalFunction) {
-                const modal = createModalFunction(item, index);
-                html += modal;
-            }
-        });
-
-        container.innerHTML = html;
-    } else {
-        return;
-    }
+    container.innerHTML = html;
 };
 
 
 
 // Function to create SkillCard
-const createSkillCard = (skill, index) => {
+const createSkillCard = (skill) => {
     const { title, icon, educations, languages, certifications } = skill;
     const maxToShow = 4;
 
@@ -972,7 +982,7 @@ const createSkillCard = (skill, index) => {
     } else if (languages) {
         return `<div class="education">
         <h4><label>${icon} ${title}</label></h4>
-        <ul class="bars">
+        <ul class="edu-list">
             ${languages.map((language, index) => `
             <li class="bar ${index >= maxToShow ? 'hide' : ''}">
                 <div class="info">
@@ -980,7 +990,7 @@ const createSkillCard = (skill, index) => {
                     <span>${language.name}</span>
                     <span>${language.level}</span>
                 </div>
-                <div class="line p-${language.line}"></div>
+                <div class="line" style="--percentage: ${language.line}%;"></div>
             </li>
             `).join('')}
         </ul>
@@ -1117,28 +1127,9 @@ const renderOtherSkillCardsAndModals = (otherSkillsData) => {
 
 
 
-const skillsData = 'skills';
-const jobsData = 'jobs';
-const otherSkillsData = 'otherSkills';
-
-let skillsRendered = false;
-let jobsRendered = false;
-let otherSkillsRendered = false;
-
-fetchDataAndRender(skillsData, renderSkillCardsAndModals, () => {
-    skillsRendered = true;
-    initializeItemShowMoreBtns();
-});
-
-fetchDataAndRender(jobsData, renderJobCardsAndModals, () => {
-    jobsRendered = true;
-    checkRenderComplete();
-});
-
-fetchDataAndRender(otherSkillsData, renderOtherSkillCardsAndModals, () => {
-    otherSkillsRendered = true;
-    checkRenderComplete();
-});
+fetchDataAndRender(skillsData, renderSkillCardsAndModals, checkRenderComplete);
+fetchDataAndRender(jobsData, renderJobCardsAndModals, checkRenderComplete);
+fetchDataAndRender(otherSkillsData, renderOtherSkillCardsAndModals, checkRenderComplete);
 
 
 // =======================
@@ -1146,51 +1137,30 @@ fetchDataAndRender(otherSkillsData, renderOtherSkillCardsAndModals, () => {
 // =======================
 
 function initializeItemShowMoreBtns() {
-    const itemShowMoreBtns = document.querySelectorAll(".item-show-more-btn");
-    const itemShowLessBtns = document.querySelectorAll(".item-show-less-btn");
+    document.addEventListener('click', function(event) {
+        const target = event.target;
 
-    itemShowMoreBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const parent = this.closest('.education');
+        if (target.classList.contains('item-show-more-btn')) {
+            const parent = target.closest('.education');
 
-            const itemShowLessBtn = parent.querySelector('.item-show-less-btn');
-            itemShowLessBtn.style.display = 'block';
+            parent.querySelector('.item-show-less-btn').style.display = 'block';
 
-            const hideItems = parent.querySelectorAll('.edu-list .item.hide');
-            hideItems.forEach(item => {
+            parent.querySelectorAll('.edu-list .item.hide, .edu-list .bar.hide').forEach(item => {
                 item.style.display = 'block';
             });
 
-            const hideBars = parent.querySelectorAll('.bars .bar.hide');
-            hideBars.forEach(bar => {
-                bar.style.display = 'block';
-            });
+            target.style.display = 'none';
+        } else if (target.classList.contains('item-show-less-btn')) {
+            const parent = target.closest('.education');
 
+            parent.querySelector('.item-show-more-btn').style.display = 'block';
 
-            this.style.display = 'none';
-        });
-    });
-
-    itemShowLessBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const parent = this.closest('.education');
-
-            const itemShowMoreBtn = parent.querySelector('.item-show-more-btn');
-            itemShowMoreBtn.style.display = 'block';
-
-            const hideItems = parent.querySelectorAll('.edu-list .item.hide');
-            hideItems.forEach(item => {
+            parent.querySelectorAll('.edu-list .item.hide, .edu-list .bar.hide').forEach(item => {
                 item.style.display = 'none';
             });
 
-            const hideBars = parent.querySelectorAll('.bars .bar.hide');
-            hideBars.forEach(bar => {
-                bar.style.display = 'none';
-            });
-
-
-            this.style.display = 'none';
-        });
+            target.style.display = 'none';
+        }
     });
 }
 
@@ -1298,8 +1268,6 @@ function initializeModals() {
 
     // Event listener for keydown event (e.g., Escape key press)
     window.addEventListener("keydown", closeOnEscape);
-
-    initializeScrollLocations();
 }
 
 function initializeScrollLocations() {
