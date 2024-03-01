@@ -1279,6 +1279,8 @@ function initializeScrollLocations() {
         if (targetElement) {
             var targetOffset = targetElement.getBoundingClientRect().top;
 
+            console.log(targetOffset);
+
             window.scrollTo({
                 top: window.pageYOffset + targetOffset,
                 behavior: 'smooth'
