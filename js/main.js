@@ -924,6 +924,7 @@ const checkRenderComplete = () => {
     if (Object.values(renderFlags).every(flag => flag)) {
         initializeItemShowMoreBtns();
         initializeModals();
+        initializeScrollLocations();
     }
 };
 
@@ -1267,8 +1268,6 @@ function initializeModals() {
 
     // Event listener for keydown event (e.g., Escape key press)
     window.addEventListener("keydown", closeOnEscape);
-
-    initializeScrollLocations();
 }
 
 function initializeScrollLocations() {
@@ -1277,10 +1276,7 @@ function initializeScrollLocations() {
         var targetElement = document.getElementById(hash);
 
         if (targetElement) {
-            var targetOffset = targetElement.getBoundingClientRect().top;
-
-            window.scrollTo({
-                top: window.pageYOffset + targetOffset,
+            targetElement.scrollIntoView({
                 behavior: 'smooth'
             });
         }
@@ -1335,10 +1331,10 @@ if (savedTheme) {
     themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("sun");
 } else {
     // Browser Dark-Mode detection
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    /* if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add("dark-theme");
         themeBtn.classList.add("sun");
-    }
+    } */
 }
 
 
