@@ -924,7 +924,6 @@ const checkRenderComplete = () => {
     if (Object.values(renderFlags).every(flag => flag)) {
         initializeModals();
         initializeItemShowMoreBtns();
-        initializeScrollLocations();
     }
 };
 
@@ -1268,6 +1267,8 @@ function initializeModals() {
 
     // Event listener for keydown event (e.g., Escape key press)
     window.addEventListener("keydown", closeOnEscape);
+
+    initializeScrollLocations();
 }
 
 function initializeScrollLocations() {
