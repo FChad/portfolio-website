@@ -1,0 +1,112 @@
+{
+  "skills": [
+    {
+      "title": "Bildung",
+      "icon": "<i class=\"fa-solid fa-graduation-cap\"></i>",
+      "educations": [
+        {
+          "year": "2021",
+          "qualification": "Höherer technischer Abschluss (Brevet de Technicien Supérieur)",
+          "specialization": "Cloud Computing",
+          "details": "Diplom (mit Bewertung: Gut)"
+        },
+        {
+          "year": "2019-2021",
+          "qualification": "Höherer technischer Abschluss (Brevet de Technicien Supérieur)",
+          "specialization": "Cloud Computing",
+          "institution": "Lycée Guillaume Kroll",
+          "location": "Esch-sur-Alzette",
+          "link": "https://www.lgk.lu/bts/clc/"
+        },
+        {
+          "year": "2019",
+          "qualification": "Techniker in der Informatik",
+          "details": "Diplom (mit Bewertung: Gut)"
+        },
+        {
+          "year": "2015-2019",
+          "qualification": "Techniker in der Informatik",
+          "institution": "Lycée Guillaume Kroll",
+          "location": "Esch-sur-Alzette",
+          "link": "https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap"
+        }
+      ]
+    },
+    {
+      "title": "Sprachen",
+      "icon": "<i class=\"fa-solid fa-language\"></i>",
+      "languages": [
+        {
+          "flag": "/img/flags/lu.svg",
+          "name": "Luxemburgisch",
+          "description": "Luxemburgische Flagge",
+          "level": "C2",
+          "line": 100
+        },
+        {
+          "flag": "/img/flags/de.svg",
+          "name": "Deutsch",
+          "description": "Deutsche Flagge",
+          "level": "C2",
+          "line": 100
+        },
+        {
+          "flag": "/img/flags/fr.svg",
+          "name": "Französisch",
+          "description": "Französische Flagge",
+          "level": "B2",
+          "line": 70
+        },
+        {
+          "flag": "/img/flags/gb.svg",
+          "name": "Englisch",
+          "description": "Britische Flagge",
+          "level": "C1",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "title": "Zertifizierungen",
+      "icon": "<i class=\"fa-solid fa-certificate\"></i>",
+      "certifications": [
+        {
+          "year": "2023",
+          "name": "Die allgemeine Eignungsprüfung staatlicher Sektor",
+          "description": "L'épreuve d'aptitude générale secteur étatique (administration)",
+          "link": "https://govjobs.public.lu/fr/examen-concours/administration/inscription.html"
+        },
+        {
+          "year": "2021",
+          "name": "Cisco Certified CyberOps Associate",
+          "description": "Course Completion",
+          "link": "https://learningnetwork.cisco.com/s/cbrops-exam-topics?ccid=cyberopsassociate"
+        },
+        {
+          "year": "2021",
+          "name": "Cisco Certified Network Associate 3",
+          "description": "7.0 Enterprise Networking, Security, and Automation",
+          "link": "https://www.netacad.com/courses/networking/ccna-enterprise-networking-security-automation"
+        },
+        {
+          "year": "2020",
+          "name": "Cisco Certified Network Associate 2",
+          "description": "7.0 Switching, Routing, and Wireless Essentials",
+          "link": "https://www.netacad.com/courses/networking/ccna-switching-routing-wireless-essentials"
+        },
+        {
+          "year": "2020",
+          "name": "Cisco Certified Network Associate 1",
+          "description": "7.0 Introduction to Networks",
+          "link": "https://www.netacad.com/courses/networking/ccna-introduction-networks"
+        },
+        {
+          "year": "2020",
+          "name": "Microsoft Office Specialist 2016",
+          "description": "PowerPoint, Word, Word expert, Outlook, Excel",
+          "link": "https://learn.microsoft.com/en-us/certifications/microsoft-office-specialist-master-certification-2016/"
+        }
+      ]
+    }
+  ]
+}

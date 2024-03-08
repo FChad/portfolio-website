@@ -1,0 +1,92 @@
+{
+    "jobs": [
+        {
+            "title": "Jobsuche in der Informatik",
+            "type": "Vollzeit",
+            "date": "Jetzt",
+            "description": "Ich suche nach spannenden Herausforderungen: Auf der Suche nach neuen beruflichen Möglichkeiten in der Informatikbranche, um wertvolle Erfahrungen zu sammeln und meine Fähigkeiten weiterzuentwickeln.",
+            "createModal": false,
+            "tasks": []
+        },
+        {
+            "title": "IT Cloud Engineer",
+            "type": "Praktikum",
+            "duration": "12 Wochen",
+            "date": "2021",
+            "company": "QPark Consulting",
+            "description": "Ein Praktikum bei QPark Consulting, wo ich drei Monate lang an zwei großen Projekten gearbeitet habe.",
+            "createModal": true,
+            "tasks": [
+                "Erstellung eines Plans für ein Projekt mit agilen Methoden",
+                "Erstellung und Konfiguration von virtuellen Maschinen (Google Cloud Platform)",
+                "Implementierung einer Website in einer virtuellen Maschine (Google Cloud Platform)",
+                "Implementierung einer statischen Website auf AWS S3 Bucket für Kosteneffizienz (Amazon Web Services)",
+                "Abrufen und Transformieren von Daten aus einer vorhandenen REST API (Amazon Web Services)"
+            ]
+        },
+        {
+            "title": "IT-Techniker",
+            "type": "Ferienjob",
+            "duration": "8 Wochen",
+            "date": "2020",
+            "company": "Lycée Guillaume Kroll",
+            "description": "Ein Ferienjob am Lycée Guillaume Kroll, wo ich zwei Monate lang in der IT-Abteilung mitgearbeitet habe.",
+            "createModal": true,
+            "tasks": [
+                "Einrichten der von MIXvoip bereitgestellten Telefone",
+                "Verwalten der von MIXvoip bereitgestellten Telefone",
+                "Die neuen Telefonanschlüsse im Rackraum nach Plan angeschlossen",
+                "Veränderung eines Plans für die Patchstellen in Microsoft Excel"
+            ]
+        },
+        {
+            "title": "IT-Techniker",
+            "type": "Ferienjob",
+            "duration": "4 Wochen",
+            "date": "2019",
+            "company": "Lycée Guillaume Kroll",
+            "description": "Ein Ferienjob am Lycée Guillaume Kroll, wo ich einen Monat lang ein Projekt abgeschlossen habe, das ich während meines Praktikums begonnen hatte.",
+            "createModal": true,
+            "tasks": [
+                "Geplante Kundenbesprechungen",
+                "Das Back-End für eine Website programmiert und modifiziert",
+                "Erstellt eine Verbindung zu einem SAML Authentifizierungsdienst",
+                "Das Front-End für eine Website programmiert und modifiziert",
+                "Alte Computer fachgerecht entsorgt und die Festplatten formatiert"
+            ]
+        },
+        {
+            "title": "IT-Techniker",
+            "type": "Praktikum",
+            "duration": "6 Wochen",
+            "date": "2019",
+            "company": "Lycée Guillaume Kroll",
+            "description": "Während meines Praktikums am Lycée Guillaume Kroll verbrachte ich hauptsächlich sechs Wochen damit, an einem Website-Projekt zu arbeiten.",
+            "createModal": true,
+            "tasks": [
+                "Geplante Kundenbesprechungen",
+                "Das Back-End für eine Website programmiert und modifiziert",
+                "Das Front-End für eine Website programmiert und modifiziert",
+                "Erstellung eines konzeptionellen Datenmodells für eine Datenbank",
+                "Erstellung eines logischen Datenmodells für eine Datenbank",
+                "Eine Datenbank mit den richtigen Feldern erstellt, Datentypen und Beziehungen"
+            ]
+        },
+        {
+            "title": "IT-Netzwerktechniker",
+            "type": "Praktikum",
+            "duration": "6 Wochen",
+            "date": "2016",
+            "company": "STEP",
+            "description": "Ein Praktikum bei STEP Syndicat intercommunal in Peppange, wo ich eine Menge über IT Netzwerke gelernt habe.",
+            "createModal": true,
+            "tasks": [
+                "Einführung in die zentralen Aspekte der internen Organisationsstruktur",
+                "Die Funktionsweise einer Kläranlage, insbesondere der kontinuierliche Durchlauf-Prozess",
+                "Erstellung eines neuen Plans für das interne Patchpanel",
+                "Nach dem neuen Plan die Patchkabel gepatcht und neu beschriftet",
+                "Viel über die praktische interne Netzwerkstruktur gelernt"
+            ]
+        }
+    ]
+}
