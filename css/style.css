@@ -1054,8 +1054,8 @@ footer a i {
     }
 
     .home-container .home-img img {
-        width: 50%;
-        transform: translate(100px, -220px);
+        width: 40%;
+        transform: translate(80%, -70%);
     }
 
     .home .home-container .info {
